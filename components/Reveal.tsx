@@ -1,15 +1,25 @@
 "use client";
 
-import { useEffect, useRef, useState, type ReactNode } from "react";
+import {
+  useEffect,
+  useRef,
+  useState,
+  type ElementType,
+  type JSX,
+  type ReactNode,
+} from "react";
 
 export default function Reveal({
+  as,
   className,
   children,
 }: {
+  as?: keyof JSX.IntrinsicElements;
   className?: string;
   children: ReactNode;
 }) {
-  const ref = useRef<HTMLDivElement>(null);
+  const Tag = (as ?? "div") as ElementType;
+  const ref = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -43,8 +53,9 @@ export default function Reveal({
   const classes = ["rv", visible && "in", className].filter(Boolean).join(" ");
 
   return (
-    <div ref={ref} className={classes}>
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    <Tag ref={ref as any} className={classes}>
       {children}
-    </div>
+    </Tag>
   );
 }
