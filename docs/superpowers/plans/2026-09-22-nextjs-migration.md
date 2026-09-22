@@ -2,11 +2,11 @@
 
 > **For agentic workers:** REQUIRED SUB-SKILL: Use superpowers:subagent-driven-development (recommended) or superpowers:executing-plans to implement this plan task-by-task. Steps use checkbox (`- [ ]`) syntax for tracking.
 
-**Goal:** Port the static single-file prototype `prosox-data-v3_4.html` into a Next.js 15 (App Router, TypeScript) project, section by section, with pixel-for-pixel visual and functional parity and no build tooling regressions.
+**Goal:** Port the static single-file prototype `prosox-data-v3_4.html` into a current-stable Next.js (App Router, TypeScript) project, section by section, with pixel-for-pixel visual and functional parity and no build tooling regressions.
 
 **Architecture:** One route (`/`) composed of small, mostly-server React components — one per prototype section, matching the prototype's existing `id` anchors. Global CSS carries over the prototype's `:root` design tokens and all classes verbatim; only the five genuinely interactive behaviors (mobile menu, tabs, lead form, scroll-spy, reveal-on-scroll, back-to-top) become client components with real React state.
 
-**Tech Stack:** Next.js 15, App Router, TypeScript, global CSS (no Tailwind/CSS Modules), `next/font/google` for fonts, npm.
+**Tech Stack:** Next.js (latest stable — pinned to 16.3.5 as of Task 1, see ledger ruling), App Router, TypeScript, global CSS (no Tailwind/CSS Modules), `next/font/google` for fonts, npm.
 
 **Spec:** `docs/superpowers/specs/2026-09-22-nextjs-migration-design.md`
 
@@ -14,7 +14,7 @@
 
 ## Global Constraints
 
-- Framework: Next.js 15, App Router, TypeScript, no Tailwind, no `src/` directory, import alias `@/*`.
+- Framework: Next.js (latest stable release resolved by `create-next-app@latest` at Task 1 time — 16.3.5), App Router, TypeScript, no Tailwind, no `src/` directory, import alias `@/*`.
 - Package manager: npm.
 - Styling: one global stylesheet (`app/globals.css`) carrying the prototype's CSS custom properties and classes **verbatim** — no renaming, no splitting into CSS Modules, no Tailwind conversion.
 - Fonts: `next/font/google` (Manrope, IBM Plex Mono), not `<link>` tags — see Task 2.

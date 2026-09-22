@@ -34,7 +34,7 @@ reveal-анимации), но живёт как один файл без тул
 
 ## Стек
 
-- **Next.js 15, App Router, TypeScript.**
+- **Next.js, latest stable release, App Router, TypeScript.** (Resolved to 16.3.5 when Task 1 ran `create-next-app@latest` — see the implementation plan's ledger for the ruling. This spec was written when Next.js 15 was current; there is no technical requirement pinning the major version, so "latest stable" is the actual intent, not "15" specifically.)
 - Глобальный CSS (`app/globals.css`) — текущий `:root` с токенами и все
   существующие классы переносятся без изменений содержимого.
 - Шрифты Manrope и IBM Plex Mono — через `next/font/google` вместо
