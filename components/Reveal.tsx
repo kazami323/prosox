@@ -4,6 +4,7 @@ import {
   useEffect,
   useRef,
   useState,
+  type CSSProperties,
   type ElementType,
   type JSX,
   type ReactNode,
@@ -12,10 +13,12 @@ import {
 export default function Reveal({
   as,
   className,
+  style,
   children,
 }: {
   as?: keyof JSX.IntrinsicElements;
   className?: string;
+  style?: CSSProperties;
   children: ReactNode;
 }) {
   const Tag = (as ?? "div") as ElementType;
@@ -54,7 +57,7 @@ export default function Reveal({
 
   return (
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
-    <Tag ref={ref as any} className={classes}>
+    <Tag ref={ref as any} className={classes} style={style}>
       {children}
     </Tag>
   );
