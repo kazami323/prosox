@@ -1,7 +1,8 @@
 import Nav from "@/components/Nav";
 import BackToTop from "@/components/BackToTop";
 import Footer from "@/components/Footer";
-import { Intro, Hero } from "@/components/sections/Hero";
+import Intro from "@/components/sections/Intro";
+import Hero from "@/components/sections/Hero";
 import Komu from "@/components/sections/Komu";
 import Kak from "@/components/sections/Kak";
 import Vid from "@/components/sections/Vid";
