@@ -30,6 +30,9 @@ const TABS = [
   },
 ];
 
+// Static, developer-authored code samples rendered via dangerouslySetInnerHTML
+// rather than JSX: these are copied verbatim from the prototype and their
+// indentation inside <pre> is significant — JSX would collapse it.
 const FORMAT_CSV_HTML = `<span class="c">источник,артикул,название,цена,валюта,дельта_24ч,остаток,проверено</span>
 Маркетплейс А,SKU-40118,Модель X 500 мл,14900,RUB,0.000,312,2026-09-09T06:00:04Z
 Маркетплейс Б,SKU-40118,Модель X 500 мл,12150,RUB,-0.185,47,2026-09-09T06:00:06Z
