@@ -27,7 +27,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="ru" className={`${manrope.variable} ${ibmPlexMono.variable}`}>
+    // suppressHydrationWarning: инлайн-скрипт ниже дописывает класс "js" до
+    // гидратации, поэтому className на <html> заведомо расходится с серверным.
+    <html
+      lang="ru"
+      className={`${manrope.variable} ${ibmPlexMono.variable}`}
+      suppressHydrationWarning
+    >
       <head>
         <script
           dangerouslySetInnerHTML={{
