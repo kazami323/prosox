@@ -29,6 +29,7 @@ export function Intro() {
             alt="Знак PROSOX"
             width={380}
             height={380}
+            priority
           />
           <p className="claim">Рынок видно каждый день</p>
           <p className="claim-sub">
