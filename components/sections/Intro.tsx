@@ -1,4 +1,7 @@
 import Image from "next/image";
+// Статический импорт, а не строковый путь: так Next сам подставляет basePath
+// (сайт отдаётся из подкаталога на GitHub Pages) и берёт размеры из файла.
+import prosoxMark from "@/public/prosox-mark.webp";
 import Reveal from "@/components/Reveal";
 
 export default function Intro() {
@@ -25,10 +28,8 @@ export default function Intro() {
         <Reveal className="intro-side">
           <Image
             className="bigmark"
-            src="/prosox-mark.webp"
+            src={prosoxMark}
             alt="Знак PROSOX"
-            width={380}
-            height={380}
             priority
           />
           <p className="claim">Рынок видно каждый день</p>
