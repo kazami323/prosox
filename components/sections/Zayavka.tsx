@@ -7,6 +7,7 @@ import {
   type FormEvent,
 } from "react";
 import Reveal from "@/components/Reveal";
+import { animate, stagger } from "animejs";
 
 const DEFAULT_BRIEF_PLACEHOLDER =
   "Источники, которые надо охватить, важные поля, периодичность — своими словами. Ссылки приветствуются.";
@@ -27,6 +28,7 @@ export default function Zayavka() {
   const consentRef = useRef<HTMLInputElement>(null);
   const companyUrlRef = useRef<HTMLInputElement>(null);
   const doneRef = useRef<HTMLDivElement>(null);
+  const noteRef = useRef<HTMLParagraphElement>(null);
 
   useEffect(() => {
     function handleClick(e: MouseEvent) {
@@ -51,8 +53,29 @@ export default function Zayavka() {
   }, []);
 
   useEffect(() => {
-    if (submitted) {
-      doneRef.current?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (!submitted) return;
+    const done = doneRef.current;
+    done?.scrollIntoView({ behavior: "smooth", block: "center" });
+    if (!done || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+    // Подтверждение — момент, которого посетитель ждал: экран приходит целиком,
+    // затем по очереди встают три шага того, что будет дальше.
+    animate(done, {
+      opacity: [0, 1],
+      translateY: [12, 0],
+      duration: 420,
+      ease: "outQuad",
+    });
+    const steps = done.querySelectorAll("li");
+    if (steps.length) {
+      animate(steps, {
+        opacity: [0, 1],
+        translateX: [-10, 0],
+        duration: 340,
+        ease: "outQuad",
+        delay: stagger(90, { start: 260 }),
+      });
     }
   }, [submitted]);
 
@@ -68,6 +91,16 @@ export default function Zayavka() {
         "Заполните имя, контакт, описание задачи и отметьте согласие на обработку данных."
       );
       setFormNoteIsError(true);
+      if (
+        noteRef.current &&
+        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
+      ) {
+        animate(noteRef.current, {
+          translateX: [0, -6, 5, -3, 0],
+          duration: 380,
+          ease: "outQuad",
+        });
+      }
       (missing[0] ?? consentRef.current)?.focus();
       return;
     }
@@ -173,6 +206,7 @@ export default function Zayavka() {
               </div>
               <p
                 className="fnote"
+                ref={noteRef}
                 role="status"
                 style={formNoteIsError ? { color: "var(--alert)" } : undefined}
               >

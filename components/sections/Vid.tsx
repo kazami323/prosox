@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import Metrics from "@/components/Metrics";
 
 export default function Vid() {
   return (
@@ -44,22 +45,22 @@ export default function Vid() {
 
           <Reveal className="mock">
             <div className="mock-top">Дашборд — ваш BI или наш микро-SaaS</div>
-            <div className="mock-body">
+            <Metrics className="mock-body">
               <div className="kpis">
-                <div className="kpi"><div className="lab">Ниже нашей цены</div><div className="val bad">18</div></div>
-                <div className="kpi"><div className="lab">Индекс к категории</div><div className="val good">104%</div></div>
-                <div className="kpi"><div className="lab">SKU под контролем</div><div className="val">1 240</div></div>
-                <div className="kpi"><div className="lab">Нет в наличии</div><div className="val">37</div></div>
+                <div className="kpi"><div className="lab">Ниже нашей цены</div><div className="val bad" data-count>18</div></div>
+                <div className="kpi"><div className="lab">Индекс к категории</div><div className="val good" data-count>104%</div></div>
+                <div className="kpi"><div className="lab">SKU под контролем</div><div className="val" data-count>1 240</div></div>
+                <div className="kpi"><div className="lab">Нет в наличии</div><div className="val" data-count>37</div></div>
               </div>
               <div className="spark">
                 <div className="lab">Средняя цена по категории, 14 дней</div>
                 <svg viewBox="0 0 240 46" width="100%" height="46" role="img" aria-label="График средней цены за 14 дней">
-                  <polyline points="2,30 20,28 38,31 56,26 74,27 92,22 110,24 128,19 146,21 164,16 182,20 200,14 218,17 236,10"
+                  <polyline data-draw points="2,30 20,28 38,31 56,26 74,27 92,22 110,24 128,19 146,21 164,16 182,20 200,14 218,17 236,10"
                     fill="none" stroke="#0B7285" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <circle cx="236" cy="10" r="3.5" fill="#0B7285"/>
                 </svg>
               </div>
-            </div>
+            </Metrics>
             <div className="mock-cap">Подключаем поток к вашему BI или собираем отдельное лёгкое приложение под одну задачу.</div>
           </Reveal>
         </div>

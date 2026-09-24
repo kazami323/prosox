@@ -1,7 +1,8 @@
 "use client";
 
-import { useState, type KeyboardEvent } from "react";
+import { useEffect, useRef, useState, type KeyboardEvent } from "react";
 import Reveal from "@/components/Reveal";
+import { animate, stagger } from "animejs";
 
 const TABS = [
   {
@@ -65,6 +66,27 @@ const FORMAT_BI_HTML = `<span class="c">поставка:</span>
 
 export default function Formaty() {
   const [active, setActive] = useState("t1");
+  const firstRender = useRef(true);
+
+  // Содержимое вкладки приходит так же, как строки в карточке героя:
+  // по одному блоку, а не целой плитой.
+  useEffect(() => {
+    if (firstRender.current) {
+      firstRender.current = false;
+      return;
+    }
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const tab = TABS.find((t) => t.id === active);
+    const panel = tab && document.getElementById(tab.panelId);
+    if (!panel) return;
+    animate(panel.children, {
+      opacity: [0, 1],
+      translateY: [8, 0],
+      duration: 320,
+      ease: "outQuad",
+      delay: stagger(60),
+    });
+  }, [active]);
 
   function handleKeyDown(e: KeyboardEvent<HTMLButtonElement>, index: number) {
     let dir = 0;
