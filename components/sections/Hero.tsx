@@ -1,4 +1,5 @@
 import Reveal from "@/components/Reveal";
+import HeroDelivery from "@/components/HeroDelivery";
 
 export default function Hero() {
   return (
@@ -35,10 +36,11 @@ export default function Hero() {
           </div>
 
           <Reveal>
-            <div className="dcard">
+            <HeroDelivery>
+            <div className="dcard" data-card>
               <div className="dhead">
                 <span className="fn">ceny_konkurentov.csv</span>
-                <span className="pill">
+                <span className="pill" data-pill>
                   <span className="led"></span>Доставлено 06:00
                 </span>
                 <span className="rows">12 480 строк</span>
@@ -56,59 +58,60 @@ export default function Hero() {
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
+                    <tr data-row>
                       <td>Маркетплейс А</td>
                       <td>SKU-40118</td>
-                      <td className="num">14 900</td>
+                      <td className="num" data-count>14 900</td>
                       <td className="num">
-                        <span className="fl">0,0%</span>
+                        <span className="fl" data-delta>0,0%</span>
                       </td>
-                      <td className="num">312</td>
+                      <td className="num" data-count>312</td>
                     </tr>
-                    <tr className="flag">
+                    <tr className="flag" data-row>
                       <td>Маркетплейс Б</td>
                       <td>SKU-40118</td>
-                      <td className="num">12 150</td>
+                      <td className="num" data-count>12 150</td>
                       <td className="num">
-                        <span className="dn">−18,5%</span>
+                        <span className="dn" data-delta>−18,5%</span>
                       </td>
-                      <td className="num">47</td>
+                      <td className="num" data-count>47</td>
                     </tr>
-                    <tr>
+                    <tr data-row>
                       <td>Ритейлер В</td>
                       <td>SKU-40118</td>
-                      <td className="num">15 290</td>
+                      <td className="num" data-count>15 290</td>
                       <td className="num">
-                        <span className="up">+1,9%</span>
+                        <span className="up" data-delta>+1,9%</span>
                       </td>
-                      <td className="num">128</td>
+                      <td className="num" data-count>128</td>
                     </tr>
-                    <tr>
+                    <tr data-row>
                       <td>Маркетплейс А</td>
                       <td>SKU-40119</td>
-                      <td className="num">8 900</td>
+                      <td className="num" data-count>8 900</td>
                       <td className="num">
-                        <span className="fl">0,0%</span>
+                        <span className="fl" data-delta>0,0%</span>
                       </td>
                       <td className="num">0</td>
                     </tr>
-                    <tr>
+                    <tr data-row>
                       <td>Каталог Г</td>
                       <td>SKU-40119</td>
-                      <td className="num">9 420</td>
+                      <td className="num" data-count>9 420</td>
                       <td className="num">
-                        <span className="dn">−3,1%</span>
+                        <span className="dn" data-delta>−3,1%</span>
                       </td>
-                      <td className="num">76</td>
+                      <td className="num" data-count>76</td>
                     </tr>
                   </tbody>
                 </table>
               </div>
-              <div className="dfoot">
+              <div className="dfoot" data-foot>
                 Строка 2 пробила вашу минимальную цену — алерт ушёл в Telegram в
                 06:00:12
               </div>
             </div>
+            </HeroDelivery>
             <p className="dcap">
               Пример структуры. Состав полей и список источников согласуем до
               начала сбора.

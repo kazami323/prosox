@@ -547,3 +547,21 @@ summary .sign{border-color:var(--rule-2);background:rgba(255,255,255,.5)}
 #materialy .actions{justify-content:flex-start}
 .hero{padding-block:clamp(16px,2.4vw,30px) clamp(44px,6vw,80px)}
 @media(max-width:560px){.nav .lang{display:none}}
+
+/* ═══════════ поставка данных: стартовое состояние ═══════════
+   Скрываем только при включённом JS (класс .js ставится инлайн-скриптом до
+   первой отрисовки) и только пока анимация не отыграла. Без JS и при
+   prefers-reduced-motion карточка видна целиком и сразу. */
+:root.js .delivery:not(.delivery--done) [data-card]{opacity:0}
+:root.js .delivery:not(.delivery--done) [data-row],
+:root.js .delivery:not(.delivery--done) [data-delta],
+:root.js .delivery:not(.delivery--done) [data-pill],
+:root.js .delivery:not(.delivery--done) [data-foot]{opacity:0}
+
+@media (prefers-reduced-motion:reduce){
+  :root.js .delivery [data-card],
+  :root.js .delivery [data-row],
+  :root.js .delivery [data-delta],
+  :root.js .delivery [data-pill],
+  :root.js .delivery [data-foot]{opacity:1}
+}
