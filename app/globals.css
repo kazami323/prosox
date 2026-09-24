@@ -565,3 +565,21 @@ summary .sign{border-color:var(--rule-2);background:rgba(255,255,255,.5)}
   :root.js .delivery [data-pill],
   :root.js .delivery [data-foot]{opacity:1}
 }
+
+/* ═══════════ гравитационная сетка на первом экране ═══════════
+   Живёт под интро и героем, а не по всей странице: на двенадцати секциях
+   подвижный фон мешал бы читать. Курсор не перехватывает. */
+.mesh-host{position:relative;isolation:isolate}
+.mesh-host > *:not(.mesh-bg){position:relative;z-index:1}
+.mesh-bg{
+  position:absolute;
+  inset:0;
+  z-index:0;
+  pointer-events:none;
+  overflow:hidden;
+  /* к низу сетка растворяется в листе, чтобы стык с остальной страницей
+     не читался линией */
+  -webkit-mask-image:linear-gradient(180deg,#000 0 62%,transparent 100%);
+  mask-image:linear-gradient(180deg,#000 0 62%,transparent 100%);
+}
+.mesh-bg canvas{display:block}

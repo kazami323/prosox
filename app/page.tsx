@@ -14,6 +14,7 @@ import Ceny from "@/components/sections/Ceny";
 import Faq from "@/components/sections/Faq";
 import Materialy from "@/components/sections/Materialy";
 import Zayavka from "@/components/sections/Zayavka";
+import MeshBackground from "@/components/MeshBackground";
 
 export default function Home() {
   return (
@@ -24,8 +25,11 @@ export default function Home() {
       <Nav />
       <main id="main">
         <div id="top"></div>
-        <Intro />
-        <Hero />
+        <div className="mesh-host">
+          <MeshBackground />
+          <Intro />
+          <Hero />
+        </div>
         <Komu />
         <Kak />
         <Vid />
