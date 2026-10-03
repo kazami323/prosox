@@ -1,40 +1,45 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import Link from "next/link";
+import {
+  locales,
+  localeNames,
+  localePath,
+  type Dictionary,
+  type Locale,
+} from "@/i18n";
 
-type NavLink = {
-  href: string;
-  label: string;
-  mobileLabel: string;
-  optional?: boolean;
-};
-
-const NAV_LINKS: NavLink[] = [
-  { href: "#komu", label: "Кому", mobileLabel: "Кому это нужно" },
-  { href: "#kak", label: "Как работает", mobileLabel: "Как работает" },
-  {
-    href: "#vid",
-    label: "Как выглядит",
-    mobileLabel: "Как выглядит",
-    optional: true,
-  },
-  { href: "#formaty", label: "Что получите", mobileLabel: "Что вы получите" },
-  { href: "#zakon", label: "Законность", mobileLabel: "Законность" },
-  { href: "#cobi", label: "Cobi AI", mobileLabel: "Cobi AI" },
-  { href: "#ceny", label: "Цены", mobileLabel: "Цены и старт" },
-  {
-    href: "#materialy",
-    label: "Статьи",
-    mobileLabel: "Статьи",
-    optional: true,
-  },
-  { href: "#faq", label: "Вопросы", mobileLabel: "Вопросы", optional: true },
+const NAV_LINKS: { href: string; optional?: boolean }[] = [
+  { href: "#komu" },
+  { href: "#kak" },
+  { href: "#vid", optional: true },
+  { href: "#formaty" },
+  { href: "#zakon" },
+  { href: "#cobi" },
+  { href: "#ceny" },
+  { href: "#materialy", optional: true },
+  { href: "#faq", optional: true },
 ];
 
-export default function Nav() {
+export default function Nav({
+  dict,
+  locale,
+  anchorBase = "",
+  langPaths,
+}: {
+  dict: Dictionary["nav"];
+  locale: Locale;
+  /** Пусто на главной. На странице статьи — путь главной (с basePath),
+   *  чтобы пункты меню вели на секции главной, а не в никуда. */
+  anchorBase?: string;
+  /** Куда ведёт каждый язык. По умолчанию — на главную этого языка;
+   *  на странице статьи — на ту же статью. */
+  langPaths?: Record<Locale, string>;
+}) {
+  const langHref = (l: Locale) => langPaths?.[l] ?? localePath(l);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [activeHref, setActiveHref] = useState<string | null>(null);
-  const [langHint, setLangHint] = useState<"en" | "vi" | null>(null);
 
   useEffect(() => {
     const sections = NAV_LINKS.map((link) =>
@@ -56,11 +61,6 @@ export default function Nav() {
     return () => observer.disconnect();
   }, []);
 
-  function handleLangStub(lang: "en" | "vi") {
-    setLangHint(lang);
-    setTimeout(() => setLangHint(null), 1600);
-  }
-
   function closeMobile() {
     setMobileOpen(false);
   }
@@ -69,7 +69,7 @@ export default function Nav() {
     <div className="navwrap">
       <div className="wrap">
         <div className="nav">
-          <a className="mark" href="#top">
+          <a className="mark" href={anchorBase + "#top"}>
             <svg
               className="logo"
               viewBox="0 0 400 400"
@@ -85,13 +85,13 @@ export default function Nav() {
               />
             </svg>
             <b>PROSOX</b>
-            <span>Данные</span>
+            <span>{dict.brandSub}</span>
           </a>
           <nav className="nlinks" id="nlinks">
-            {NAV_LINKS.map((link) => (
+            {NAV_LINKS.map((link, i) => (
               <a
                 key={link.href}
-                href={link.href}
+                href={anchorBase + link.href}
                 className={
                   [
                     link.optional ? "opt" : "",
@@ -101,47 +101,37 @@ export default function Nav() {
                     .join(" ") || undefined
                 }
               >
-                {link.label}
+                {dict.links[i].label}
               </a>
             ))}
           </nav>
           <div className="right">
-            <div className="lang" role="group" aria-label="Язык">
-              <button type="button" className="on" aria-pressed="true">
-                RU
-              </button>
-              <button
-                type="button"
-                className="soon"
-                aria-pressed="false"
-                title="Английская версия — скоро"
-                onClick={() => handleLangStub("en")}
-              >
-                {langHint === "en" ? "скоро" : "EN"}
-              </button>
-              <button
-                type="button"
-                className="soon"
-                aria-pressed="false"
-                title="Вьетнамская версия — скоро"
-                onClick={() => handleLangStub("vi")}
-              >
-                {langHint === "vi" ? "скоро" : "VI"}
-              </button>
+            <div className="lang" role="group" aria-label={dict.langLabel}>
+              {locales.map((l) => (
+                <Link
+                  key={l}
+                  href={langHref(l)}
+                  hrefLang={l}
+                  aria-current={l === locale ? "true" : undefined}
+                  className={l === locale ? "on" : undefined}
+                >
+                  {localeNames[l]}
+                </Link>
+              ))}
             </div>
             <a className="navmail" href="mailto:info@prosox.io">
               info@prosox.io
             </a>
             <a
               className="btn btn--fill"
-              href="#zayavka"
-              data-req="Пример выгрузки"
+              href={anchorBase + "#zayavka"}
+              data-req={dict.req}
             >
-              Получить пример
+              {dict.cta}
             </a>
             <button
               className="burger"
-              aria-label="Меню"
+              aria-label={dict.menuLabel}
               aria-expanded={mobileOpen}
               onClick={() => setMobileOpen((open) => !open)}
             >
@@ -150,18 +140,18 @@ export default function Nav() {
           </div>
         </div>
         <div className={`mobmenu${mobileOpen ? " open" : ""}`}>
-          {NAV_LINKS.map((link) => (
-            <a key={link.href} href={link.href} onClick={closeMobile}>
-              {link.mobileLabel}
+          {NAV_LINKS.map((link, i) => (
+            <a key={link.href} href={anchorBase + link.href} onClick={closeMobile}>
+              {dict.links[i].mobileLabel}
             </a>
           ))}
           <a
             className="btn btn--fill"
-            href="#zayavka"
-            data-req="Пример выгрузки"
+            href={anchorBase + "#zayavka"}
+            data-req={dict.req}
             onClick={closeMobile}
           >
-            Получить пример
+            {dict.cta}
           </a>
           <a
             href="mailto:info@prosox.io"
@@ -170,7 +160,21 @@ export default function Nav() {
           >
             info@prosox.io
           </a>
-          <p className="mob-lang">Английская и вьетнамская версии — скоро</p>
+          <p className="mob-lang">{dict.langNote}</p>
+          <div className="lang" role="group" aria-label={dict.langLabel}>
+            {locales.map((l) => (
+              <Link
+                key={l}
+                href={langHref(l)}
+                hrefLang={l}
+                aria-current={l === locale ? "true" : undefined}
+                className={l === locale ? "on" : undefined}
+                onClick={closeMobile}
+              >
+                {localeNames[l]}
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </div>

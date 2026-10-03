@@ -7,6 +7,9 @@ const nextConfig: NextConfig = {
   // project-instructions convention and is out of scope for this migration.
   agentRules: false,
 
+  // Префикс для «сырых» путей (<video src>), которые next сам не переписывает.
+  env: { NEXT_PUBLIC_BASE_PATH: process.env.BASE_PATH ?? "" },
+
   // Статическая выгрузка: STATIC_EXPORT=1 npm run build кладёт готовый сайт
   // в ./out. Включается только переменной окружения, обычная сборка не
   // меняется. next/image при экспорте не оптимизирует на лету, поэтому в
@@ -19,6 +22,9 @@ const nextConfig: NextConfig = {
     ? {
         output: "export" as const,
         images: { unoptimized: true },
+        // каждая страница — каталог с index.html: GitHub Pages отдаёт /en/
+        // только так, а без слэша сам перенаправит на него
+        trailingSlash: true,
         ...(process.env.BASE_PATH
           ? { basePath: process.env.BASE_PATH }
           : { assetPrefix: "." }),
