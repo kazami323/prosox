@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+import portrait from "@/public/team/dmitrii-sokolov.jpg";
 import {
   useEffect,
   useRef,
@@ -8,17 +10,14 @@ import {
 } from "react";
 import Reveal from "@/components/Reveal";
 import { animate, stagger } from "animejs";
+import type { Dictionary } from "@/i18n";
 
-const DEFAULT_BRIEF_PLACEHOLDER =
-  "Источники, которые надо охватить, важные поля, периодичность — своими словами. Ссылки приветствуются.";
-const DEFAULT_FORM_NOTE = "Прототип: форма пока не подключена к серверу.";
-
-export default function Zayavka() {
+export default function Zayavka({ dict }: { dict: Dictionary["zayavka"] }) {
   const [subject, setSubject] = useState("");
   const [briefPlaceholder, setBriefPlaceholder] = useState(
-    DEFAULT_BRIEF_PLACEHOLDER
+    dict.briefPlaceholder
   );
-  const [formNote, setFormNote] = useState(DEFAULT_FORM_NOTE);
+  const [formNote, setFormNote] = useState(dict.formNote);
   const [formNoteIsError, setFormNoteIsError] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
@@ -43,14 +42,14 @@ export default function Zayavka() {
         }
         if (briefRef.current && !briefRef.current.value) {
           setBriefPlaceholder(
-            `Запрос: ${value}. Добавьте источники и поля, которые вам важны.`
+            dict.briefPlaceholderWithSubject.replace("{subject}", value)
           );
         }
       }, 500);
     }
     document.addEventListener("click", handleClick);
     return () => document.removeEventListener("click", handleClick);
-  }, []);
+  }, [dict]);
 
   useEffect(() => {
     if (!submitted) return;
@@ -87,9 +86,7 @@ export default function Zayavka() {
     const missing = required.filter((el) => !el?.value.trim());
 
     if (missing.length || !consentRef.current?.checked) {
-      setFormNote(
-        "Заполните имя, контакт, описание задачи и отметьте согласие на обработку данных."
-      );
+      setFormNote(dict.formError);
       setFormNoteIsError(true);
       if (
         noteRef.current &&
@@ -112,30 +109,26 @@ export default function Zayavka() {
     <section className="sec sec--alt" id="zayavka">
       <div className="wrap g-two">
         <Reveal>
-          <span className="kicker">С чего начать</span>
+          <span className="kicker">{dict.kicker}</span>
           <h2 className="h2">
-            Расскажите, что вам нужно видеть
-            <span className="thin">вернёмся с планом сбора и ценой.</span>
+            {dict.h2}
+            <span className="thin">{dict.thin}</span>
           </h2>
-          <p className="lede">
-            Двух-трёх ссылок на источники и одного предложения о том, какое
-            решение вы пытаетесь принять, достаточно. В ответ придёт план
-            сбора, формат поставки и фиксированная оценка.
-          </p>
+          <p className="lede">{dict.lede}</p>
 
           {!submitted && (
             <form id="leadform" noValidate onSubmit={handleSubmit}>
               <div className="subject" hidden={!subject}>
-                <span className="lb">Тема запроса</span>
+                <span className="lb">{dict.subjectLabel}</span>
                 <b>{subject}</b>
                 <button type="button" onClick={() => setSubject("")}>
-                  сбросить
+                  {dict.subjectReset}
                 </button>
               </div>
               <input type="hidden" name="subject" value={subject} readOnly />
               <div className="hp" aria-hidden="true">
                 <label>
-                  Не заполняйте это поле
+                  {dict.honeypotLabel}
                   <input
                     type="text"
                     name="company_url"
@@ -147,37 +140,37 @@ export default function Zayavka() {
               </div>
 
               <label>
-                Имя
+                {dict.nameLabel}
                 <input
                   type="text"
                   name="name"
-                  placeholder="Как к вам обращаться"
+                  placeholder={dict.namePlaceholder}
                   autoComplete="name"
                   required
                   ref={nameRef}
                 />
               </label>
               <label>
-                Компания
+                {dict.companyLabel}
                 <input
                   type="text"
                   name="company"
-                  placeholder="Название и сфера — одной строкой"
+                  placeholder={dict.companyPlaceholder}
                   autoComplete="organization"
                 />
               </label>
               <label>
-                Email или Telegram
+                {dict.contactLabel}
                 <input
                   type="text"
                   name="contact"
-                  placeholder="you@company.com или @username"
+                  placeholder={dict.contactPlaceholder}
                   required
                   ref={contactRef}
                 />
               </label>
               <label>
-                Какие данные нужны
+                {dict.briefLabel}
                 <textarea
                   name="brief"
                   placeholder={briefPlaceholder}
@@ -188,20 +181,19 @@ export default function Zayavka() {
               <label className="consent">
                 <input type="checkbox" name="consent" required ref={consentRef} />
                 <span>
-                  Согласен на обработку указанных данных для ответа на
-                  обращение. Подробности — в{" "}
+                  {dict.consentText}{" "}
                   <a href="#" onClick={(e) => e.preventDefault()}>
-                    политике конфиденциальности
+                    {dict.consentLink}
                   </a>
                   .
                 </span>
               </label>
               <div className="actions" style={{ marginTop: 0 }}>
                 <button className="btn btn--fill" type="submit">
-                  Отправить заявку
+                  {dict.submit}
                 </button>
                 <a className="btn btn--wire" href="mailto:info@prosox.io">
-                  Или напишите на почту
+                  {dict.mailLink}
                 </a>
               </div>
               <p
@@ -231,23 +223,20 @@ export default function Zayavka() {
                   <path d="M4 11.5l5 5L18 6" />
                 </svg>
               </div>
-              <h3>Заявка отправлена</h3>
-              <p>Спасибо. Мы уже смотрим ваши источники. Что будет дальше:</p>
+              <h3>{dict.doneTitle}</h3>
+              <p>{dict.doneLead}</p>
               <ul>
                 <li>
                   <span className="n">01</span>
-                  <span>Напишем, что технически возможно и сколько это стоит</span>
+                  <span>{dict.doneSteps[0]}</span>
                 </li>
                 <li>
                   <span className="n">02</span>
-                  <span>Параллельно юристы проверяют юрисдикцию источников</span>
+                  <span>{dict.doneSteps[1]}</span>
                 </li>
                 <li>
                   <span className="n">03</span>
-                  <span>
-                    Если всё складывается — собираем пример выгрузки на ваших
-                    источниках
-                  </span>
+                  <span>{dict.doneSteps[2]}</span>
                 </li>
               </ul>
             </div>
@@ -256,17 +245,17 @@ export default function Zayavka() {
 
         <Reveal>
           <div className="person">
-            <div className="avatar">ДС</div>
+            <Image className="avatar avatar--photo" src={portrait} alt={dict.personName} width={56} height={56} />
             <div>
-              <div className="nm">Дмитрий Соколов</div>
-              <div className="rl">Директор по развитию бизнеса, PROSOX</div>
+              <div className="nm">{dict.personName}</div>
+              <div className="rl">{dict.personRole}</div>
               <div className="lk">
                 <a
                   href="https://www.linkedin.com/in/dmitrii-prosox"
                   target="_blank"
                   rel="noopener"
                 >
-                  Профиль в LinkedIn
+                  {dict.personLinkedin}
                 </a>
               </div>
             </div>
@@ -274,11 +263,11 @@ export default function Zayavka() {
 
           <div className="contacts">
             <div className="crow">
-              <div className="lbl">Общие вопросы</div>
+              <div className="lbl">{dict.generalLabel}</div>
               <div className="val">
                 <a href="mailto:info@prosox.io">info@prosox.io</a>
                 <br />
-                Оценка задач, коммерческие предложения, договоры
+                {dict.generalText}
               </div>
             </div>
             <div className="crow">
@@ -294,26 +283,24 @@ export default function Zayavka() {
               </div>
             </div>
             <div className="crow">
-              <div className="lbl">Офис</div>
+              <div className="lbl">{dict.officeLabel}</div>
               <div className="val">
                 229 Chính Hữu Street, An Hải Ward
                 <br />
-                Дананг, Вьетнам
+                {dict.officeCity}
               </div>
             </div>
             <div className="crow">
-              <div className="lbl">Компания</div>
+              <div className="lbl">{dict.companyRowLabel}</div>
               <div className="val">
-                PROSOX, 11–50 специалистов
+                {dict.companyRowSize}
                 <br />
-                Технологии, информационные средства и интернет
+                {dict.companyRowIndustry}
               </div>
             </div>
           </div>
           <p className="fnote" style={{ marginTop: 16, lineHeight: 1.6 }}>
-            Работаем в разных часовых поясах. Если вашим юристам или закупкам
-            нужны документы до начала работы — напишите, пришлём реквизиты
-            компании, шаблон NDA и образец юридического заключения заранее.
+            {dict.footnote}
           </p>
         </Reveal>
       </div>

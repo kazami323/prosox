@@ -3,40 +3,45 @@ import Image from "next/image";
 // (сайт отдаётся из подкаталога на GitHub Pages) и берёт размеры из файла.
 import prosoxMark from "@/public/prosox-mark.webp";
 import Reveal from "@/components/Reveal";
+import type { Dictionary, Locale } from "@/i18n";
+import { asset } from "@/lib/paths";
 
-export default function Intro() {
+export default function Intro({
+  dict,
+  locale,
+}: {
+  dict: Dictionary["intro"];
+  locale: Locale;
+}) {
   return (
     <section className="sec intro">
       <div className="wrap g-intro">
         <Reveal>
-          <div className="video video--hero">
-            <div>
-              <div className="play" aria-hidden="true">
-                <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
-                  <path d="M5 3v10l8-5z" />
-                </svg>
-              </div>
-              <h4>От ссылки на сайт до готового файла</h4>
-              <p>
-                Запись экрана: страница источника → разметка полей → проверенная
-                выгрузка → поставка по расписанию.
-              </p>
-              <span className="slot">Место под ролик — видео нужно записать</span>
-            </div>
-          </div>
+          <figure className="video video--hero video--real">
+            <video
+              controls
+              preload="none"
+              playsInline
+              poster={asset(`/video/prosox-${locale}.jpg`)}
+              aria-label={dict.videoTitle}
+            >
+              <source src={asset(`/video/prosox-${locale}.mp4`)} type="video/mp4" />
+            </video>
+            <figcaption>
+              <h4>{dict.videoTitle}</h4>
+              <p>{dict.videoText}</p>
+            </figcaption>
+          </figure>
         </Reveal>
         <Reveal className="intro-side">
           <Image
             className="bigmark"
             src={prosoxMark}
-            alt="Знак PROSOX"
+            alt={dict.markAlt}
             priority
           />
-          <p className="claim">Рынок видно каждый день</p>
-          <p className="claim-sub">
-            Публичные веб-данные для бизнеса — собранные, проверенные и
-            доставленные туда, где работает ваша команда.
-          </p>
+          <p className="claim">{dict.claim}</p>
+          <p className="claim-sub">{dict.claimSub}</p>
         </Reveal>
       </div>
     </section>
