@@ -245,7 +245,7 @@ export default function Zayavka({ dict }: { dict: Dictionary["zayavka"] }) {
 
         <Reveal>
           <div className="person">
-            <Image className="avatar avatar--photo" src={portrait} alt={dict.personName} width={56} height={56} />
+            <Image className="avatar avatar--photo" src={portrait} alt="" width={56} height={56} />
             <div>
               <div className="nm">{dict.personName}</div>
               <div className="rl">{dict.personRole}</div>

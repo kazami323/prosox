@@ -3,9 +3,9 @@ import path from "node:path";
 import matter from "gray-matter";
 import type { StaticImageData } from "next/image";
 import type { Locale } from "@/i18n";
-import coverPrice from "@/public/blog/kakuyu-cenu-sobirat.jpg";
-import coverLegal from "@/public/blog/zakonno-li-sobirat-dannye.jpg";
-import coverUzum from "@/public/blog/uzum-market.jpg";
+import coverPrice from "@/assets/blog/kakuyu-cenu-sobirat.jpg";
+import coverLegal from "@/assets/blog/zakonno-li-sobirat-dannye.jpg";
+import coverUzum from "@/assets/blog/uzum-market.jpg";
 
 /** Порядок здесь — порядок карточек на главной. Обложки подключаются
  *  статическим импортом, чтобы Next сам подставил basePath. */

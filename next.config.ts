@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
   // project-instructions convention and is out of scope for this migration.
   agentRules: false,
 
+  // Свой <html> для 404 (app/global-not-found.tsx): у приложения несколько
+  // корневых layout, обычный not-found для них не работает.
+  experimental: { globalNotFound: true },
+
   // Префикс для «сырых» путей (<video src>), которые next сам не переписывает.
   env: { NEXT_PUBLIC_BASE_PATH: process.env.BASE_PATH ?? "" },
 

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { locales, type Locale } from "@/i18n";
-import { homePath, postPath } from "@/lib/paths";
+import { asset, homePath, postPath } from "@/lib/paths";
 import { getPost } from "@/lib/blog";
 
 const SITE = {
@@ -25,10 +25,19 @@ const ogLocale: Record<Locale, string> = { ru: "ru_RU", en: "en_US", vi: "vi_VN"
 
 /** hreflang-альтернативы: поисковику нужно знать, что /, /en и /vi —
  *  одна страница на разных языках, а не три дубля. */
+function fullPath(p: string) {
+  return asset(p === "/" ? "/" : `${p}/`);
+}
+
 function alternates(paths: Record<Locale, string>, current: Locale): Metadata["alternates"] {
+  // basePath в canonical/hreflang next сам не добавляет, а слэш на конце
+  // нужен тот же, что у реальных страниц (trailingSlash при экспорте).
+  const full = Object.fromEntries(
+    Object.entries(paths).map(([l, p]) => [l, fullPath(p)]),
+  ) as Record<Locale, string>;
   return {
-    canonical: paths[current],
-    languages: { ...paths, "x-default": paths.ru },
+    canonical: full[current],
+    languages: { ...full, "x-default": full.ru },
   };
 }
 
@@ -39,7 +48,7 @@ export function homeMetadata(locale: Locale): Metadata {
     title: SITE[locale].title,
     description: SITE[locale].description,
     alternates: alternates(paths, locale),
-    openGraph: { title: SITE[locale].title, description: SITE[locale].description, locale: ogLocale[locale], type: "website" },
+    openGraph: { title: SITE[locale].title, description: SITE[locale].description, url: fullPath(paths[locale]), locale: ogLocale[locale], type: "website" },
   };
 }
 
@@ -51,6 +60,6 @@ export function postMetadata(slug: string, locale: Locale): Metadata {
     title: `${post.title} — PROSOX`,
     description: post.description,
     alternates: alternates(paths, locale),
-    openGraph: { title: post.title, description: post.description, locale: ogLocale[locale], type: "article", images: [post.cover.src] },
+    openGraph: { title: post.title, description: post.description, url: fullPath(paths[locale]), locale: ogLocale[locale], type: "article", images: [post.cover.src] },
   };
 }

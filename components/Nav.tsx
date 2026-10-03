@@ -112,7 +112,7 @@ export default function Nav({
                   key={l}
                   href={langHref(l)}
                   hrefLang={l}
-                  aria-current={l === locale ? "true" : undefined}
+                  aria-current={l === locale ? "page" : undefined}
                   className={l === locale ? "on" : undefined}
                 >
                   {localeNames[l]}
@@ -167,7 +167,7 @@ export default function Nav({
                 key={l}
                 href={langHref(l)}
                 hrefLang={l}
-                aria-current={l === locale ? "true" : undefined}
+                aria-current={l === locale ? "page" : undefined}
                 className={l === locale ? "on" : undefined}
                 onClick={closeMobile}
               >

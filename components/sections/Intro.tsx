@@ -23,12 +23,12 @@ export default function Intro({
               preload="none"
               playsInline
               poster={asset(`/video/prosox-${locale}.jpg`)}
-              aria-label={dict.videoTitle}
+              aria-labelledby="intro-video-title"
             >
               <source src={asset(`/video/prosox-${locale}.mp4`)} type="video/mp4" />
             </video>
             <figcaption>
-              <h4>{dict.videoTitle}</h4>
+              <h4 id="intro-video-title">{dict.videoTitle}</h4>
               <p>{dict.videoText}</p>
             </figcaption>
           </figure>
