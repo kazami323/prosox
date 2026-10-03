@@ -1,0 +1,22 @@
+1:"$Sreact.fragment"
+2:I[97367,["/prosox/_next/static/chunks/3fntmmi971322.js"],"OutletBoundary"]
+3:"$Sreact.suspense"
+7:I[97367,["/prosox/_next/static/chunks/3fntmmi971322.js"],"ViewportBoundary"]
+8:I[97367,["/prosox/_next/static/chunks/3fntmmi971322.js"],"MetadataBoundary"]
+9:I[27201,["/prosox/_next/static/chunks/3fntmmi971322.js"],"IconMark"]
+b:I[39756,["/prosox/_next/static/chunks/3fntmmi971322.js"],"default"]
+c:I[37457,["/prosox/_next/static/chunks/3fntmmi971322.js"],"default"]
+:HL["/prosox/_next/static/chunks/09ycz1-498xh3.css","style"]
+6:X
+e:X
+e:C
+0:{"buildId":"XEjtPBb7mbm11J3eTOCKz","data":[{"rsc":["$","$1","c",{"children":[null,null,["$","$L2",null,{"children":["$","$3",null,{"name":"Next.MetadataOutlet","children":"$@4"}]}]]}],"isPartial":"$@5","staleTime":"$6","varyParams":null},{"rsc":["$","$1","h",{"children":[["$","meta",null,{"name":"robots","content":"noindex"}],["$","$L7",null,{"children":[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]}],["$","div",null,{"hidden":true,"children":["$","$L8",null,{"children":["$","$3",null,{"name":"Next.Metadata","children":[["$","title","0",{"children":"404 — PROSOX"}],["$","link","1",{"rel":"icon","href":"/prosox/icon.svg?icon.2cxszsf-ruzi6.svg","sizes":"any","type":"image/svg+xml"}],["$","$L9","2",{}]]}]}]}],["$","meta",null,{"name":"next-size-adjust","content":""}]]}],"isPartial":"$@a","staleTime":"$6","varyParams":null},{"rsc":["$","$1","c",{"children":[null,["$","$Lb",null,{"parallelRouterKey":"children","template":["$","$Lc",null,{}]}]]}],"isPartial":"$@d","staleTime":"$6","varyParams":"$e"},{"rsc":["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/prosox/_next/static/chunks/09ycz1-498xh3.css","precedence":"next"}],["$","script","script-0",{"src":"/prosox/_next/static/chunks/3fntmmi971322.js","async":true}]],["$","html",null,{"lang":"ru","className":"manrope_b9f12b9f-module__csm6fa__variable ibm_plex_mono_eb83bcc2-module__ObEoZG__variable","suppressHydrationWarning":true,"children":[["$","head",null,{"children":["$","script",null,{"dangerouslySetInnerHTML":{"__html":"document.documentElement.classList.add(\"js\")"}}]}],["$","body",null,{"children":["$","main",null,{"className":"wrap nf","children":["$","div",null,{"children":[["$","a",null,{"className":"mark","href":"/prosox/","children":["$","b",null,{"children":"PROSOX"}]}],["$","span",null,{"className":"kicker","children":"404"}],["$","h1",null,{"children":"Страница не найдена"}],["$","p",null,{"className":"lede","children":"Такой страницы нет или она переехала."}],["$","div",null,{"className":"nf-links","children":[["$","a",null,{"className":"btn btn--fill","href":"/prosox/","children":"На главную"}],["$","a",null,{"className":"btn btn--wire","href":"/prosox/en/","children":"Home (English)"}],["$","a",null,{"className":"btn btn--wire","href":"/prosox/vi/","children":"Trang chủ (Tiếng Việt)"}]]}]]}]}]}]]}]]}],"isPartial":"$@f","staleTime":"$6","varyParams":null}],"isUpgradeableISRFallback":false,"a":"$@10","rootVaryParams":null,"needsRuntimeRequest":"$@11"}
+4:null
+6:300
+11:true
+6:C
+10:0
+a:"$undefined"
+d:"$undefined"
+f:"$undefined"
+5:"$undefined"

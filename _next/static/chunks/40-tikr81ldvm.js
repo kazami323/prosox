@@ -1,0 +1,1 @@
+(globalThis.TURBOPACK||(globalThis.TURBOPACK=[])).push(["object"==typeof document?document.currentScript:void 0,21442,o=>{o.v(t=>Promise.all(["static/chunks/1qyommwf9wcbc.js"].map(t=>o.l(t))).then(()=>t(32009)))},33745,o=>{o.q("/prosox/_next/static/media/dmitrii-sokolov.1qr_22vj0_yp2.jpg")}]);
