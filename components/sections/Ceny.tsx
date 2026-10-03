@@ -1,109 +1,80 @@
 import Reveal from "@/components/Reveal";
+import type { Dictionary } from "@/i18n";
 
-export default function Ceny() {
+export default function Ceny({ dict }: { dict: Dictionary["ceny"] }) {
+  const { pilot, monitoring, platform } = dict;
   return (
     <section className="sec sec--alt" id="ceny">
       <div className="wrap">
         <Reveal className="sec-head">
-          <span className="kicker">Как начинаем и сколько стоит</span>
+          <span className="kicker">{dict.kicker}</span>
           <h2 className="h2">
-            Три способа начать
-            <span className="thin">
-              и фиксированная цифра до того, как вы на что-то соглашаетесь.
-            </span>
+            {dict.h2}
+            <span className="thin">{dict.thin}</span>
           </h2>
-          <p className="lede">
-            Стоимость определяют три вещи: сколько источников, какая доля
-            страниц требует полноценного браузера для отрисовки и как часто
-            нужны данные. Мы называем одно число после того, как разберём
-            вашу задачу: без почасовой оплаты и без доплат за то, что
-            источник сломался.
-          </p>
+          <p className="lede">{dict.lede}</p>
         </Reveal>
 
         <div className="tiers">
           <Reveal className="tier">
-            <div className="name">Пилот</div>
-            <div className="who">Сначала проверить данные</div>
+            <div className="name">{pilot.name}</div>
+            <div className="who">{pilot.who}</div>
             <ul>
-              <li>
-                <span className="ck">●</span>Один источник, один набор
-                данных, ваши реальные артикулы или сегменты
-              </li>
-              <li>
-                <span className="ck">●</span>Выгрузка-пример и
-                зафиксированная спецификация полей
-              </li>
-              <li>
-                <span className="ck">●</span>Отчёт о покрытии: что удалось
-                получить, а что нет
-              </li>
-              <li>
-                <span className="ck">●</span>Правовая позиция по источнику
-                включена
-              </li>
+              {pilot.items.map((item) => (
+                <li key={item}>
+                  <span className="ck">●</span>
+                  {item}
+                </li>
+              ))}
             </ul>
             <div className="price">
-              Фиксированная сумма
+              {pilot.price[0]}
               <br />
-              Цену называем после разбора задачи
+              {pilot.price[1]}
             </div>
           </Reveal>
           <Reveal className="tier tier--focus">
-            <span className="badge">Чаще всего берут</span>
-            <div className="name">Мониторинг</div>
-            <div className="who">Основной формат работы</div>
+            <span className="badge">{monitoring.badge}</span>
+            <div className="name">{monitoring.name}</div>
+            <div className="who">{monitoring.who}</div>
             <ul>
-              <li>
-                <span className="ck">●</span>Сбор и поставка по расписанию —
-                от раза в час до раза в месяц
-              </li>
-              <li>
-                <span className="ck">●</span>Любое сочетание файла, API,
-                базы данных и облака
-              </li>
-              <li>
-                <span className="ck">●</span>Валидация каждой партии до
-                того, как она к вам придёт
-              </li>
-              <li>
-                <span className="ck">●</span>Починка парсеров при
-                изменениях на источниках — включена
-              </li>
-              <li>
-                <span className="ck">●</span>Named-контакт, сроки реакции
-                закреплены в договоре
-              </li>
+              {monitoring.items.map((item) => (
+                <li key={item}>
+                  <span className="ck">●</span>
+                  {item}
+                </li>
+              ))}
             </ul>
             <div className="price">
-              Ежемесячно — источники × объём × частота
+              {monitoring.price[0]}
               <br />
-              Продлевается сам, без блокировки сверх срока уведомления
+              {monitoring.price[1]}
             </div>
           </Reveal>
           <Reveal className="tier">
-            <div className="name">Платформа</div>
-            <div className="who">Когда данным нужен интерфейс</div>
+            <div className="name">{platform.name}</div>
+            <div className="who">{platform.who}</div>
             <ul>
               <li>
-                <span className="ck">●</span>MCP-сервер, микро-SaaS,
-                подключение к BI и алерты
+                <span className="ck">●</span>
+                {platform.items[0]}
               </li>
               <li>
-                <span className="ck">●</span>Состав работ —{" "}
+                <span className="ck">●</span>
+                {platform.scopeLead}
                 <a href="#instrumenty" style={{ color: "var(--action)" }}>
-                  в разделе «Больше, чем выгрузка»
+                  {platform.scopeLink}
                 </a>
               </li>
               <li>
-                <span className="ck">●</span>Работает поверх действующего
-                мониторинга
+                <span className="ck">●</span>
+                {platform.items[1]}
               </li>
             </ul>
             <div className="price">
-              Проект с фиксированным объёмом
+              {platform.price[0]}
               <br />
-              Считаем после обсуждения технической части
+              {platform.price[1]}
             </div>
           </Reveal>
         </div>

@@ -1,120 +1,71 @@
+import { Fragment } from "react";
 import Reveal from "@/components/Reveal";
+import type { Dictionary } from "@/i18n";
 
-export default function Kak() {
+const STEP_META = [
+  { no: "01", by: "by-you" },
+  { no: "02", by: "by-us" },
+  { no: "03", by: "by-us" },
+  { no: "04", by: "by-you" },
+  { no: "05", by: "by-us" },
+  { no: "06", by: "by-us" },
+] as const;
+
+export default function Kak({ dict }: { dict: Dictionary["kak"] }) {
   return (
     <section className="sec" id="kak">
       <div className="wrap">
         <Reveal className="sec-head">
-          <span className="kicker">Как это работает</span>
+          <span className="kicker">{dict.kicker}</span>
           <h2 className="h2">
-            Одно письмо с вашей стороны.
-            <span className="thin">Вся техническая часть — на нас.</span>
+            {dict.h2}
+            <span className="thin">{dict.thin}</span>
           </h2>
-          <p className="lede">
-            Из шести шагов ваши только три, и ни один не занимает больше получаса. Всё остальное — оценка выполнимости, юридическая проверка, парсеры, очистка, мониторинг, починка — происходит у нас.
-          </p>
+          <p className="lede">{dict.lede}</p>
         </Reveal>
 
         <div className="steps">
-          <Reveal className="step">
-            <div className="st-no">01</div>
-            <div>
-              <h3>
-                Называете источники и поля<span className="by by-you">Вы</span>
-              </h3>
-              <p>Напишите нам: какие сайты, какие данные, как часто и что вы будете с этим делать. Достаточно прислать ссылки, техзадание не нужно.</p>
-            </div>
-            <div className="st-out">список источников<br />список полей<br />периодичность</div>
-          </Reveal>
-          <Reveal className="step">
-            <div className="st-no">02</div>
-            <div>
-              <h3>
-                Юридическая проверка и фиксированная цена<span className="by by-us">PROSOX</span>
-              </h3>
-              <p>Юристы проверяют юрисдикцию источников и вашей компании. Параллельно считаем техническую стоимость: статические страницы дёшевы, страницы с JavaScript-отрисовкой — нет. Вы получаете одно число, а не вилку.</p>
-            </div>
-            <div className="st-out">заключение: можно / нельзя<br />фиксированная цена<br />дата старта</div>
-          </Reveal>
-          <Reveal className="step">
-            <div className="st-no">03</div>
-            <div>
-              <h3>
-                Пример собран на ваших источниках<span className="by by-us">PROSOX</span>
-              </h3>
-              <p>Не демо-датасет из чужого проекта. Мы делаем парсеры под ваши реальные источники и присылаем настоящую выгрузку в согласованной структуре полей.</p>
-            </div>
-            <div className="st-out">файл-пример<br />спецификация полей<br />отчёт о покрытии</div>
-          </Reveal>
-          <Reveal className="step">
-            <div className="st-no">04</div>
-            <div>
-              <h3>
-                Сверяете пример с реальностью<span className="by by-you">Вы</span>
-              </h3>
-              <p>Открываете рядом с источником и проверяете. Если поле не то, не хватает или неудобно устроено — это самый дешёвый момент, чтобы поменять.</p>
-            </div>
-            <div className="st-out">согласование<br />или правки</div>
-          </Reveal>
-          <Reveal className="step">
-            <div className="st-no">05</div>
-            <div>
-              <h3>
-                Запускается регулярная поставка<span className="by by-us">PROSOX</span>
-              </h3>
-              <p>Сбор по расписанию в выбранный вами канал: файл, API, запись прямо в вашу базу, выгрузка в облако. Каждая партия проходит валидацию до отправки.</p>
-            </div>
-            <div className="st-out">поставка по расписанию<br />журнал валидации</div>
-          </Reveal>
-          <Reveal className="step">
-            <div className="st-no">06</div>
-            <div>
-              <h3>
-                Мы следим за источниками, вы — за рынком<span className="by by-us">PROSOX</span>
-              </h3>
-              <p>Сайты меняют вёрстку, поля переезжают, страницы начинают отрисовываться в браузере. Мы отслеживаем поломки и чиним парсеры в рамках той же услуги — и предупреждаем, когда изменение на источнике влияет на смысл ваших цифр.</p>
-            </div>
-            <div className="st-out">мониторинг доступности<br />починка парсеров<br />уведомления об изменениях</div>
-          </Reveal>
+          {dict.steps.map((step, i) => (
+            <Reveal className="step" key={STEP_META[i].no}>
+              <div className="st-no">{STEP_META[i].no}</div>
+              <div>
+                <h3>
+                  {step.title}
+                  <span className={`by ${STEP_META[i].by}`}>{step.by}</span>
+                </h3>
+                <p>{step.text}</p>
+              </div>
+              <div className="st-out">
+                {step.out.map((line, j) => (
+                  <Fragment key={line}>
+                    {j > 0 && <br />}
+                    {line}
+                  </Fragment>
+                ))}
+              </div>
+            </Reveal>
+          ))}
         </div>
 
         <Reveal className="tbl" style={{ marginTop: "clamp(28px,3vw,40px)" }}>
-          <div className="tbl-cap">Сравнение со своей командой</div>
+          <div className="tbl-cap">{dict.table.caption}</div>
           <div className="scroll-x">
             <table>
               <thead>
                 <tr>
                   <th>&nbsp;</th>
-                  <th>Своя команда</th>
-                  <th>Работа с нами</th>
+                  <th>{dict.table.own}</th>
+                  <th>{dict.table.us}</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>Путь до первых данных</td>
-                  <td>Найм, потом инфраструктура, потом первый парсер</td>
-                  <td className="us">Сначала пример на ваших источниках, затем регулярная поставка</td>
-                </tr>
-                <tr>
-                  <td>Постоянные расходы</td>
-                  <td>Зарплаты, серверы, прокси-инфраструктура, дежурства</td>
-                  <td className="us">Одна строка в месяц, зафиксированная при подписании</td>
-                </tr>
-                <tr>
-                  <td>Когда источник меняет вёрстку</td>
-                  <td>Задача, конкурирующая с вашей продуктовой дорожной картой</td>
-                  <td className="us">Наша проблема, внутри той же суммы</td>
-                </tr>
-                <tr>
-                  <td>Правовая позиция по сбору</td>
-                  <td>Ваши юристы, по каждому источнику, с нуля</td>
-                  <td className="us">Проверено до старта, письменно — по запросу</td>
-                </tr>
-                <tr>
-                  <td>Когда уходит человек, который это построил</td>
-                  <td>Экспертиза уходит вместе с ним</td>
-                  <td className="us">На договоре компания, а не физическое лицо</td>
-                </tr>
+                {dict.table.rows.map((row) => (
+                  <tr key={row.label}>
+                    <td>{row.label}</td>
+                    <td>{row.own}</td>
+                    <td className="us">{row.us}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>

@@ -1,94 +1,67 @@
 import Reveal from "@/components/Reveal";
+import type { Dictionary } from "@/i18n";
 
-export default function Cobi() {
+export default function Cobi({ dict }: { dict: Dictionary["cobi"] }) {
   return (
     <section className="sec band" id="cobi">
       <div className="wrap g-band">
         <Reveal>
-          <span className="kicker">Готовый продукт, а не проект под заказ</span>
+          <span className="kicker">{dict.kicker}</span>
           <h2 className="h2">
             Cobi AI
             <span className="thin">
-              категорийный ассистент, который не перестаёт смотреть.
+              {dict.thin}
             </span>
           </h2>
-          <p className="lede">
-            Почти всё, что мы делаем, собирается под конкретную задачу. Cobi —
-            исключение: законченный продукт для команд, которые продают на
-            маркетплейсах. Он не заменяет категорийного менеджера, а снимает с
-            него ту часть работы, которая состоит из обновления вкладок.
-          </p>
+          <p className="lede">{dict.lede}</p>
           <ul className="feat">
-            <li>
-              <span className="n">01</span>
-              <span>
-                Алерты о движении цен в момент изменения, а не в завтрашнем
-                отчёте
-              </span>
-            </li>
-            <li>
-              <span className="n">02</span>
-              <span>
-                Два индекса по каждому артикулу: ваша цена против прямых
-                конкурентов и против категории
-              </span>
-            </li>
-            <li>
-              <span className="n">03</span>
-              <span>Дельты день к дню, связки конкурентов, выгрузка в CSV</span>
-            </li>
-            <li>
-              <span className="n">04</span>
-              <span>
-                Чат-ассистент отвечает на вопрос по рынку и говорит, что с
-                этим делать
-              </span>
-            </li>
-            <li>
-              <span className="n">05</span>
-              <span>
-                Один дашборд вместо переключения между кабинетами площадок
-              </span>
-            </li>
+            {dict.features.map((f, i) => (
+              <li key={i}>
+                <span className="n">{String(i + 1).padStart(2, "0")}</span>
+                <span>{f}</span>
+              </li>
+            ))}
           </ul>
           <div className="actions">
             <a
               className="btn btn--band"
               href="#zayavka"
-              data-req="Демо Cobi AI на своих брендах"
+              data-req={dict.demoReq}
             >
-              Демо на ваших брендах
+              {dict.demoLabel}
             </a>
             <a
               className="btn btn--bandwire"
               href="#zayavka"
-              data-req="Бесплатный пилот Cobi AI"
+              data-req={dict.pilotReq}
             >
-              Бесплатный пилот
+              {dict.pilotLabel}
             </a>
           </div>
         </Reveal>
         <Reveal>
           <div className="bpanel">
-            <div className="bp-head">Покрытие площадок</div>
+            <div className="bp-head">{dict.coverageHead}</div>
             <div className="bp-row">
-              Uzum<span className="state state--live">Работает</span>
+              Uzum<span className="state state--live">{dict.live}</span>
             </div>
             <div className="bp-row">
-              Wildberries<span className="state state--live">Работает</span>
+              Wildberries<span className="state state--live">{dict.live}</span>
             </div>
             <div className="bp-row">
-              Ozon<span className="state state--live">Работает</span>
+              Ozon<span className="state state--live">{dict.live}</span>
             </div>
             <div className="bp-row">
-              Яндекс Маркет<span className="state state--live">Работает</span>
+              {dict.yandexMarket}<span className="state state--live">{dict.live}</span>
             </div>
           </div>
           <div className="bpanel">
-            <div className="bp-head">Как начинается работа с Cobi</div>
-            <div className="bp-row">Демо на ваших брендах</div>
-            <div className="bp-row">Бесплатный пилот, полный доступ</div>
-            <div className="bp-row">Настройка и запуск</div>
+            <div className="bp-head">{dict.startHead}</div>
+            {dict.startSteps.map((step) => (
+              <div className="bp-row" key={step}>
+                {step}
+              </div>
+            ))}
           </div>
           <p
             style={{
@@ -98,8 +71,7 @@ export default function Cobi() {
               lineHeight: 1.65,
             }}
           >
-            Чат ассистента работает на русском языке. Если нужна площадка,
-            которой нет в списке — напишите, посмотрим, что можно сделать.
+            {dict.note}
           </p>
         </Reveal>
       </div>

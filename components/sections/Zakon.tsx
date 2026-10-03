@@ -1,37 +1,35 @@
 import Reveal from "@/components/Reveal";
+import type { Dictionary } from "@/i18n";
 
-export default function Zakon() {
+export default function Zakon({ dict }: { dict: Dictionary["zakon"] }) {
   return (
     <section className="sec" id="zakon">
       <div className="wrap">
         <Reveal className="sec-head">
-          <span className="kicker">Законность и безопасность</span>
-          <h2 className="h2">Каждый сбор согласован<span className="thin">до того, как прочитана первая страница.</span></h2>
-          <p className="lede">Сбор публичных данных законен, и сам по себе этот ответ стоит немного. Вашему юристу важно другое: кто проверял, по какой юрисдикции и можно ли увидеть это письменно. Все три пункта входят в услугу.</p>
+          <span className="kicker">{dict.kicker}</span>
+          <h2 className="h2">{dict.h2}<span className="thin">{dict.thin}</span></h2>
+          <p className="lede">{dict.lede}</p>
         </Reveal>
 
         <div className="g-two">
           <Reveal>
             <div className="flow">
-              <div className="fstep"><div className="fno">01</div><div><h4>Запрос зафиксирован</h4><p>Источники и цель использования документируем до того, как что-то начнёт строиться.</p></div></div>
-              <div className="fstep"><div className="fno">02</div><div><h4>Проверена юрисдикция</h4><p>Правовой режим страны источника и страны вашей компании. Проверяет кибер-юридическое бюро, которое сопровождает каждый наш проект.</p></div></div>
-              <div className="fstep"><div className="fno">03</div><div><h4>Проверен комплаенс</h4><p>Персональные данные, условия площадок, авторское право и права на базы данных — в привязке к тому, что вы собираетесь делать с результатом.</p></div></div>
-              <div className="fstep"><div className="fno">04</div><div><h4>Сбор разрешён</h4><p>Проект уходит в работу, а письменная правовая позиция по нему доступна вам по запросу — до подписания договора, а не после.</p></div></div>
+              {dict.steps.map((step, i) => (
+                <div className="fstep" key={step.title}><div className="fno">{String(i + 1).padStart(2, "0")}</div><div><h4>{step.title}</h4><p>{step.text}</p></div></div>
+              ))}
             </div>
-            <div className="actions"><a className="btn btn--wire" href="#zayavka" data-req="Образец юридического заключения">Запросить образец заключения</a></div>
+            <div className="actions"><a className="btn btn--wire" href="#zayavka" data-req={dict.sampleReq}>{dict.sampleBtn}</a></div>
           </Reveal>
 
           <Reveal>
-            <h3 style={{ fontSize: "clamp(19px,2vw,23px)", marginBottom: 10 }}>Чего мы не делаем ни за какие деньги</h3>
-            <p className="ans" style={{ marginBottom: 18 }}>Это та граница, которая отделяет поставщика, которого согласует ваша служба комплаенса, от поставщика, которого она завернёт.</p>
+            <h3 style={{ fontSize: "clamp(19px,2vw,23px)", marginBottom: 10 }}>{dict.neverTitle}</h3>
+            <p className="ans" style={{ marginBottom: 18 }}>{dict.neverLead}</p>
             <ul className="never">
-              <li><span className="x">01</span><span>Не входим в аккаунты — ни в ваши, ни в чужие — чтобы достать то, что за ними</span></li>
-              <li><span className="x">02</span><span>Не собираем из платных, приватных и любых закрытых разделов сайта</span></li>
-              <li><span className="x">03</span><span>Не обходим защиту доступа и не выдаём свои сборщики за авторизованного пользователя</span></li>
-              <li><span className="x">04</span><span>Не берём персональные данные сверх того, что допускают применимые юрисдикции для вашей заявленной цели</span></li>
-              <li><span className="x">05</span><span>Не создаём на источнике нагрузку, которая мешает ему обслуживать своих посетителей</span></li>
+              {dict.never.map((item, i) => (
+                <li key={i}><span className="x">{String(i + 1).padStart(2, "0")}</span><span>{item}</span></li>
+              ))}
             </ul>
-            <p className="ans" style={{ marginTop: 18 }}>Если источник можно собрать, только перейдя одну из этих границ, мы говорим, что этого сделать нельзя, и предлагаем альтернативный источник. Такой разговор происходит до начала работ, а не после того, как вы заплатили.</p>
+            <p className="ans" style={{ marginTop: 18 }}>{dict.neverOutro}</p>
           </Reveal>
         </div>
       </div>

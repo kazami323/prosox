@@ -1,37 +1,37 @@
 import Reveal from "@/components/Reveal";
 import HeroDelivery from "@/components/HeroDelivery";
+import type { Dictionary } from "@/i18n";
 
-export default function Hero() {
+export default function Hero({ dict }: { dict: Dictionary["hero"] }) {
   return (
     <section className="sec hero">
       <div className="wrap">
         <div className="g-hero">
           <div>
-            <span className="kicker">Веб-данные для бизнеса</span>
+            <span className="kicker">{dict.kicker}</span>
             <h1>
-              Публичные данные вашего рынка
-              <span className="thin">туда, где вы уже работаете.</span>
+              {dict.h1}
+              <span className="thin">{dict.thin}</span>
             </h1>
             <p className="hero-sub">
-              Вы называете источники, поля и периодичность. Сбор, очистку и
-              проверку берём на себя.
+              {dict.sub}
             </p>
             <div className="actions">
               <a
                 className="btn btn--fill"
                 href="#zayavka"
-                data-req="Пример выгрузки на своих источниках"
+                data-req={dict.ctaReq}
               >
-                Пример на своих источниках
+                {dict.cta}
               </a>
               <a className="btn btn--wire" href="#kak">
-                Как работает
+                {dict.ctaHow}
               </a>
             </div>
             <p className="hero-note">
-              Фиксированная оценка до начала работ
+              {dict.note1}
               <br />
-              Пример выгрузки собираем на ваших источниках
+              {dict.note2}
             </p>
           </div>
 
@@ -41,25 +41,25 @@ export default function Hero() {
               <div className="dhead">
                 <span className="fn">ceny_konkurentov.csv</span>
                 <span className="pill" data-pill>
-                  <span className="led"></span>Доставлено 06:00
+                  <span className="led"></span>{dict.delivered}
                 </span>
-                <span className="rows">12 480 строк</span>
+                <span className="rows">{dict.rows}</span>
               </div>
-              <div className="hint">← прокрутите таблицу →</div>
+              <div className="hint">{dict.hint}</div>
               <div className="scroll-x">
                 <table className="dt">
                   <thead>
                     <tr>
-                      <th>Источник</th>
-                      <th>Артикул</th>
-                      <th className="num">Цена</th>
-                      <th className="num">Δ 24 ч</th>
-                      <th className="num">Остаток</th>
+                      <th>{dict.thSource}</th>
+                      <th>{dict.thSku}</th>
+                      <th className="num">{dict.thPrice}</th>
+                      <th className="num">{dict.thDelta}</th>
+                      <th className="num">{dict.thStock}</th>
                     </tr>
                   </thead>
                   <tbody>
                     <tr data-row>
-                      <td>Маркетплейс А</td>
+                      <td>{dict.srcA}</td>
                       <td>SKU-40118</td>
                       <td className="num" data-count>14 900</td>
                       <td className="num">
@@ -68,7 +68,7 @@ export default function Hero() {
                       <td className="num" data-count>312</td>
                     </tr>
                     <tr className="flag" data-row>
-                      <td>Маркетплейс Б</td>
+                      <td>{dict.srcB}</td>
                       <td>SKU-40118</td>
                       <td className="num" data-count>12 150</td>
                       <td className="num">
@@ -77,7 +77,7 @@ export default function Hero() {
                       <td className="num" data-count>47</td>
                     </tr>
                     <tr data-row>
-                      <td>Ритейлер В</td>
+                      <td>{dict.srcC}</td>
                       <td>SKU-40118</td>
                       <td className="num" data-count>15 290</td>
                       <td className="num">
@@ -86,7 +86,7 @@ export default function Hero() {
                       <td className="num" data-count>128</td>
                     </tr>
                     <tr data-row>
-                      <td>Маркетплейс А</td>
+                      <td>{dict.srcA}</td>
                       <td>SKU-40119</td>
                       <td className="num" data-count>8 900</td>
                       <td className="num">
@@ -95,7 +95,7 @@ export default function Hero() {
                       <td className="num">0</td>
                     </tr>
                     <tr data-row>
-                      <td>Каталог Г</td>
+                      <td>{dict.srcD}</td>
                       <td>SKU-40119</td>
                       <td className="num" data-count>9 420</td>
                       <td className="num">
@@ -107,47 +107,23 @@ export default function Hero() {
                 </table>
               </div>
               <div className="dfoot" data-foot>
-                Строка 2 пробила вашу минимальную цену — алерт ушёл в Telegram в
-                06:00:12
+                {dict.foot}
               </div>
             </div>
             </HeroDelivery>
             <p className="dcap">
-              Пример структуры. Состав полей и список источников согласуем до
-              начала сбора.
+              {dict.cap}
             </p>
           </Reveal>
         </div>
 
         <div className="trust">
-          <div className="tcell">
-            <div className="k">Только публичное</div>
-            <div className="v">
-              Без входа в аккаунты, платных и закрытых разделов. Это принцип, а
-              не исключение.
+          {dict.trust.map((t) => (
+            <div className="tcell" key={t.k}>
+              <div className="k">{t.k}</div>
+              <div className="v">{t.v}</div>
             </div>
-          </div>
-          <div className="tcell">
-            <div className="k">Юрпроверка до старта</div>
-            <div className="v">
-              Каждый проект проходит проверку кибер-юридического бюро до
-              первого запроса к сайту.
-            </div>
-          </div>
-          <div className="tcell">
-            <div className="k">Своя инфраструктура</div>
-            <div className="v">
-              Строим и обслуживаем сами, работает круглосуточно. Не перепродажа
-              чужих мощностей.
-            </div>
-          </div>
-          <div className="tcell">
-            <div className="k">Дананг, Вьетнам</div>
-            <div className="v">
-              Зарегистрированная компания, 11–50 специалистов. Договор и NDA
-              подписываем как юрлицо.
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </section>
