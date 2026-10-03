@@ -1,11 +1,11 @@
 ---
-rubric: Phân tích sàn
+rubric: Phân tích nền tảng
 cardTitle: "Uzum Market: dữ liệu nào được công khai"
 description: "Những gì bạn thấy được mà không cần đăng nhập trên nền tảng lớn nhất Uzbekistan và những bài toán có thể giải bằng dữ liệu đó: giá, kiểm soát người bán của thương hiệu, sản phẩm mới, đánh giá. Dành cho thương hiệu và nhà phân phối đang bán tại Uzbekistan."
 title: "Uzum Market: dữ liệu nào được công khai và bạn có thể làm gì với chúng"
 ---
 
-Uzum Market là nền tảng thương mại điện tử lớn nhất Uzbekistan. Sàn ra mắt vào tháng 10/2022 và sau ba năm đã trở thành nơi bán hàng trực tuyến chính của cả nước. Theo số liệu của công ty tính đến tháng 3/2026, doanh thu của sàn thương mại điện tử năm 2025 đạt khoảng 500 triệu USD; trên nền tảng có hơn 17.000 người bán và khoảng 1,5 triệu sản phẩm.
+Uzum Market là nền tảng thương mại điện tử lớn nhất Uzbekistan. Nền tảng này ra mắt vào tháng 10/2022 và sau ba năm đã trở thành nơi bán hàng trực tuyến chính của cả nước. Theo số liệu của công ty tính đến tháng 3/2026, doanh thu của sàn thương mại điện tử năm 2025 đạt khoảng 500 triệu USD; trên nền tảng có hơn 17.000 người bán và khoảng 1,5 triệu sản phẩm.
 
 Với thương hiệu hoặc nhà phân phối đang bán tại Uzbekistan, điều này có nghĩa đơn giản: giá, danh mục sản phẩm và đối thủ trên Uzum phần lớn chính là thị trường. Dưới đây là những dữ liệu nào trên nền tảng được công khai và chúng giải quyết được những bài toán nào.
 
@@ -41,7 +41,7 @@ Mọi thứ liệt kê dưới đây đều mở cho bất kỳ khách truy cậ
 
 **Giám sát giá của đối thủ.** Bức tranh giá hằng ngày, và khi cần thì thường xuyên hơn, cho sản phẩm của bạn và các đối thủ trực tiếp, tách riêng giá gốc và giá khuyến mãi.
 
-**Kiểm soát giá ở những người bán của thương hiệu.** Với hàng thương hiệu, nền tảng yêu cầu người bán cung cấp giấy tờ chứng minh quyền sử dụng nhãn hiệu, vì vậy nhóm người bán của thương hiệu thường đã được biết rõ. Việc thu thập dữ liệu cho thấy ai trong số họ giữ giá thấp hơn giá đề xuất và trong bao lâu.
+**Kiểm soát giá ở những người bán của thương hiệu.** Với hàng thương hiệu, nền tảng yêu cầu người bán cung cấp giấy tờ chứng minh quyền sử dụng nhãn hiệu, vì vậy nhóm người bán của thương hiệu thường đã được biết rõ. Việc thu thập dữ liệu cho thấy ai trong số họ giữ giá thấp hơn giá bán lẻ đề xuất và trong bao lâu.
 
 **Mức độ hiện diện của thương hiệu.** Có bao nhiêu người bán đang bán sản phẩm của bạn, họ có sẵn những biến thể nào, thiếu những mặt hàng nào.
 
@@ -59,6 +59,6 @@ Mọi thứ liệt kê dưới đây đều mở cho bất kỳ khách truy cậ
 
 ## Uzum và Cobi AI
 
-Uzum nằm trong số các nền tảng mà Cobi AI by Prosox, trợ lý của chúng tôi dành cho quản lý ngành hàng, làm việc cùng. Hiện tại Cobi được kết nối với Uzum, Wildberries và Yandex Lavka. Cobi theo dõi giá của đối thủ suốt ngày đêm, gửi cảnh báo về những thay đổi đột ngột và trả lời các câu hỏi về thị trường trong cuộc trò chuyện bằng tiếng Nga.
+Uzum là một trong những nền tảng được Cobi AI by Prosox, trợ lý của chúng tôi dành cho quản lý ngành hàng, hỗ trợ. Hiện tại Cobi được kết nối với Uzum, Wildberries và Yandex Lavka. Cobi theo dõi giá của đối thủ suốt ngày đêm, gửi cảnh báo về những thay đổi đột ngột và trả lời các câu hỏi về thị trường trong cuộc trò chuyện bằng tiếng Nga.
 
 Nếu bạn bán trên Ozon hoặc Kaspi, việc tích hợp với các nền tảng này có thể được thực hiện riêng cho cửa hàng của bạn: để làm điều đó cần có khóa API từ tài khoản người bán của bạn.

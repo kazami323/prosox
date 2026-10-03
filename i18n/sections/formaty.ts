@@ -147,8 +147,8 @@ Retailer C,SKU-40118,Model X 500 ml,15290,RUB,0.019,128,2026-09-09T06:00:09Z`,
     ],
     btnSample: "Request a sample export",
     btnSampleReq: "Sample export",
-    btnCatalog: "Send me the full field catalogue",
-    btnCatalogReq: "Full field catalogue",
+    btnCatalog: "Send me the full field catalog",
+    btnCatalogReq: "Full field catalog",
   },
   vi: {
     kicker: "Bạn sẽ nhận được gì",
@@ -157,12 +157,12 @@ Retailer C,SKU-40118,Model X 500 ml,15290,RUB,0.019,128,2026-09-09T06:00:09Z`,
     lede: "Chúng tôi thống nhất cấu trúc trường dữ liệu trước khi bắt đầu thu thập, nên khi nghiệm thu bạn không phải chỉnh sửa lại gì. Hãy chọn kênh theo người sẽ sử dụng: chuyên viên phân tích, lập trình viên, đội dữ liệu hoặc cấp quản lý.",
     tablistLabel: "Định dạng bàn giao",
     tabs: [
-      { label: "CSV / Excel", sub: "Dành cho chuyên viên phân tích và quản lý ngành hàng" },
-      { label: "JSON / API", sub: "Dành cho lập trình viên — tích hợp vào dịch vụ của bạn" },
-      { label: "Ghi thẳng vào cơ sở dữ liệu", sub: "Dành cho đội dữ liệu — PostgreSQL, ClickHouse" },
-      { label: "BI, đám mây và cảnh báo", sub: "Dành cho cấp quản lý — cần câu trả lời, không phải tệp" },
+      { label: "CSV / Excel", sub: "Cho nhà phân tích, quản lý ngành hàng" },
+      { label: "JSON / API", sub: "Cho lập trình viên — tích hợp vào dịch vụ" },
+      { label: "Thẳng vào cơ sở dữ liệu", sub: "Cho đội dữ liệu — PostgreSQL, ClickHouse" },
+      { label: "BI, đám mây và cảnh báo", sub: "Cho quản lý — cần đáp án, không phải tệp" },
     ],
-    csvHtml: `<span class="c">nguồn,sku,tên,giá,tiền_tệ,thay_đổi_24h,tồn_kho,thời_điểm_kiểm_tra</span>
+    csvHtml: `<span class="c">source,sku,name,price,currency,delta_24h,stock,checked_at</span>
 Sàn A,SKU-40118,Model X 500 ml,14900,RUB,0.000,312,2026-09-09T06:00:04Z
 Sàn B,SKU-40118,Model X 500 ml,12150,RUB,-0.185,47,2026-09-09T06:00:06Z
 Nhà bán lẻ C,SKU-40118,Model X 500 ml,15290,RUB,0.019,128,2026-09-09T06:00:09Z`,
@@ -180,17 +180,17 @@ Nhà bán lẻ C,SKU-40118,Model X 500 ml,15290,RUB,0.019,128,2026-09-09T06:00:0
   (source, sku, price, currency, delta_24h, in_stock, checked_at)
 <span class="k">VALUES</span>
   ('Sàn B','SKU-40118',12150,'RUB',-0.185,47,'2026-09-09 06:00:06');`,
-    biHtml: `<span class="c">bàn_giao:</span>
-  <span class="k">đám_mây</span>:  s3://bucket-cua-ban/prices/dt=2026-09-09/
+    biHtml: `<span class="c">delivery:</span>
+  <span class="k">cloud</span>:    s3://your-bucket/prices/dt=2026-09-09/
   <span class="k">bi</span>:       power_bi, cập nhật 06:15
-  <span class="k">cảnh_báo</span>:
-    - <span class="k">quy_tắc</span>: giá_đối_thủ &lt; giá_sàn_của_bạn
-      <span class="k">kênh</span>:    telegram, #canh-bao-gia
-    - <span class="k">quy_tắc</span>: tổng_hợp_hằng_tuần
-      <span class="k">kênh</span>:    email, quản lý ngành hàng`,
+  <span class="k">alerts</span>:
+    - <span class="k">rule</span>:    competitor_price &lt; your_floor_price
+      <span class="k">channel</span>: telegram, #price-alerts
+    - <span class="k">rule</span>:    weekly_summary
+      <span class="k">channel</span>: email, quản lý ngành hàng`,
     panels: [
       {
-        head: "gia_doi_thu.csv — UTF-8, gửi qua email hoặc SFTP",
+        head: "competitor_prices.csv — UTF-8, gửi qua email hoặc SFTP",
         note: "Mở được ngay trong Excel hoặc Google Sheets. Mỗi lần xuất một tệp riêng, hoặc một tệp lũy kế có kèm lịch sử — tùy bạn chọn.",
       },
       {
@@ -211,16 +211,16 @@ Nhà bán lẻ C,SKU-40118,Model X 500 ml,15290,RUB,0.019,128,2026-09-09T06:00:0
     thType: "Kiểu",
     thMeaning: "Ý nghĩa",
     rows: [
-      { field: "nguồn", type: "chuỗi", meaning: "Dòng dữ liệu được đọc từ trang web hoặc sàn thương mại điện tử nào" },
+      { field: "source", type: "chuỗi", meaning: "Dòng dữ liệu được đọc từ trang web hoặc sàn thương mại điện tử nào" },
       { field: "sku", type: "chuỗi", meaning: "Mã định danh của bạn, được đối chiếu với trang sản phẩm của nguồn khi thiết lập" },
-      { field: "giá", type: "số", meaning: "Mức giá người mua nhìn thấy tại khu vực bạn chỉ định" },
-      { field: "thay_đổi_24h", type: "số", meaning: "Mức thay đổi so với lần xuất trước, do chúng tôi tính toán" },
-      { field: "tồn_kho", type: "số nguyên", meaning: "Tình trạng hàng đúng như nguồn công bố" },
-      { field: "thời_điểm_kiểm_tra", type: "ngày và giờ", meaning: "Thời điểm trang thực sự được đọc, không phải lúc tệp được gửi đi" },
+      { field: "price", type: "số", meaning: "Mức giá người mua nhìn thấy tại khu vực bạn chỉ định" },
+      { field: "delta_24h", type: "số", meaning: "Mức thay đổi so với lần xuất trước, do chúng tôi tính toán" },
+      { field: "stock", type: "số nguyên", meaning: "Tình trạng hàng đúng như nguồn công bố" },
+      { field: "checked_at", type: "ngày và giờ", meaning: "Thời điểm trang thực sự được đọc, không phải lúc tệp được gửi đi" },
     ],
     btnSample: "Yêu cầu bản xuất mẫu",
     btnSampleReq: "Bản xuất mẫu",
-    btnCatalog: "Gửi cho tôi danh mục đầy đủ các trường",
+    btnCatalog: "Gửi danh mục trường đầy đủ",
     btnCatalogReq: "Danh mục đầy đủ các trường",
   },
 });

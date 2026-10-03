@@ -1,11 +1,11 @@
 ---
-rubric: Marketplace breakdown
+rubric: Platform review
 cardTitle: "Uzum Market: what data is open"
-description: "What you can see without logging in on Uzbekistan's largest marketplace and which tasks that data solves: prices, control of brand sellers, new arrivals, reviews. For brands and distributors that sell in Uzbekistan."
+description: "What you can see without logging in on Uzbekistan's largest platform and which tasks that data solves: prices, control of brand sellers, new arrivals, reviews. For brands and distributors that sell in Uzbekistan."
 title: "Uzum Market: what data is open and what you can do with it"
 ---
 
-Uzum Market is the largest e-commerce marketplace in Uzbekistan. It launched in October 2022 and within three years became the main place for online sales in the country. According to the company's data as of March 2026, the marketplace's turnover for 2025 was about $500 million, and the platform has more than 17,000 sellers and about 1.5 million products.
+Uzum Market is the largest e-commerce platform in Uzbekistan. It launched in October 2022 and within three years became the main place for online sales in the country. According to the company's data as of March 2026, the marketplace's turnover for 2025 was about $500 million, and the platform has more than 17,000 sellers and about 1.5 million products.
 
 For a brand or distributor that sells in Uzbekistan, this means one simple thing: prices, assortment and competitors on Uzum are, to a large extent, the market. Let's look at what data is open on the platform and which tasks it helps solve.
 

@@ -82,7 +82,7 @@ A separate price for holders of a loyalty card, the platform's bank card, or a p
 
 ## Unit price
 
-The price per kilogram, litre, or item in a set.
+The price per kilogram, liter, or item in a set.
 
 **When you need it**
 - competitors' products differ in pack size;
@@ -93,7 +93,7 @@ The price per kilogram, litre, or item in a set.
 
 **Suited for:** food, household chemicals, products sold in sets.
 
-## Separately: instalment payment
+## Separately: installment payment
 
 "From 45,000 a month" is set in large type on the listing and looks like a price, but it isn't one. It should be stored in a separate field and not mixed with prices.
 
@@ -108,6 +108,6 @@ The price per kilogram, litre, or item in a set.
 
 ## Example
 
-A brand checks whether sellers comply with the recommended price. On the listing, the product is 13% below RRP. If you collect only the final price, this looks like a violation. If the base price is next to it, along with a note that the discount came from a platform coupon, the picture is different: the seller holds the RRP, and the marketplace pays for the discount.
+A brand checks whether sellers comply with the recommended price. On the listing, the product is 13% below RRP. If you collect only the final price, this looks like a violation. If the base price is next to it, along with a note that the discount came from a platform coupon, the picture is different: the seller holds the RRP, and the platform pays for the discount.
 
 That is why each price type is stored in its own field when collected, together with the seller, the time of capture, and availability. Then the same dataset answers different questions, and a report for a new task is built without re-collecting data.

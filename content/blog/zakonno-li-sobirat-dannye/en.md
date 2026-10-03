@@ -1,5 +1,5 @@
 ---
-rubric: Legal
+rubric: Legal side
 cardTitle: Is it legal to collect public data
 description: "Where the line falls between open and closed data, what the courts have decided on the subject, and what does not become permitted simply because the data is open. For lawyers and executives deciding how to work with web data."
 title: Is it legal to collect public data from the internet

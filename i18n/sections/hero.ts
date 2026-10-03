@@ -103,12 +103,12 @@ export const hero = section({
     thSource: "Nguồn",
     thSku: "SKU",
     thPrice: "Giá",
-    thDelta: "Thay đổi 24 giờ",
+    thDelta: "Δ 24h",
     thStock: "Tồn kho",
     srcA: "Sàn A",
     srcB: "Sàn B",
     srcC: "Nhà bán lẻ C",
-    srcD: "Danh mục D",
+    srcD: "Cửa hàng D",
     foot: "Dòng 2 đã xuống dưới giá sàn của bạn — cảnh báo đã gửi qua Telegram lúc 06:00:12",
     cap: "Cấu trúc minh họa. Các trường dữ liệu và danh sách nguồn sẽ được thống nhất trước khi bắt đầu thu thập.",
     trust: [
@@ -117,8 +117,8 @@ export const hero = section({
         v: "Không đăng nhập tài khoản, không truy cập mục trả phí hay mục đóng. Đây là nguyên tắc, không phải ngoại lệ.",
       },
       {
-        k: "Rà soát pháp lý trước khi bắt đầu",
-        v: "Mỗi dự án đều được văn phòng luật chuyên về pháp lý mạng rà soát trước khi gửi yêu cầu đầu tiên đến trang web.",
+        k: "Rà soát pháp lý trước khởi động",
+        v: "Mỗi dự án đều được văn phòng luật chuyên về không gian mạng rà soát trước khi gửi yêu cầu đầu tiên đến trang web.",
       },
       {
         k: "Hạ tầng riêng",
@@ -126,7 +126,7 @@ export const hero = section({
       },
       {
         k: "Đà Nẵng, Việt Nam",
-        v: "Công ty đã đăng ký, 11–50 chuyên viên. Hợp đồng và NDA được ký với tư cách pháp nhân.",
+        v: "Công ty đã đăng ký, 11–50 chuyên gia. Hợp đồng và NDA được ký với tư cách pháp nhân.",
       },
     ],
   },

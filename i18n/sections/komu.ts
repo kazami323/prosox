@@ -50,7 +50,7 @@ export const komu = section({
       {
         tag: "Retail and brands",
         said: "“We have no idea what our dealers actually list, or at what price”",
-        ans: "Listing-level monitoring across every marketplace: assortment, availability, new arrivals, search position. <b>An RRP breach becomes a row in a file</b> rather than a rumour from a sales rep. You also see where the category is empty.",
+        ans: "Listing-level monitoring across every platform: assortment, availability, new arrivals, search position. <b>An RRP breach becomes a row in a file</b> rather than a rumor from a sales rep. You also see where the category is empty.",
       },
     ],
     tripleCards: [
@@ -67,7 +67,7 @@ export const komu = section({
       {
         tag: "AI and ML",
         said: "“We need training data our lawyer will sign off on”",
-        ans: "Clean, structured datasets from public sources, with documented provenance and jurisdiction for every source. A written legal position comes with the project.",
+        ans: "Clean, structured datasets from public sources, with documented provenance and jurisdiction for every source. A written legal position is available per project.",
       },
     ],
   },
@@ -85,7 +85,7 @@ export const komu = section({
       {
         tag: "Bán lẻ và thương hiệu",
         said: "“Chúng tôi không biết đại lý của mình thực sự đăng bán gì và với giá bao nhiêu”",
-        ans: "Giám sát ở cấp từng sản phẩm trên mọi sàn: danh mục, tình trạng còn hàng, hàng mới, thứ hạng tìm kiếm. <b>Vi phạm giá bán lẻ đề xuất trở thành một dòng trong tệp dữ liệu</b>, thay vì lời đồn từ nhân viên kinh doanh. Bạn cũng thấy được chỗ nào trong ngành hàng đang bỏ trống.",
+        ans: "Giám sát ở cấp từng sản phẩm trên mọi nền tảng: danh mục, tình trạng còn hàng, hàng mới, thứ hạng tìm kiếm. <b>Vi phạm giá bán lẻ đề xuất trở thành một dòng trong tệp dữ liệu</b>, thay vì lời đồn từ nhân viên kinh doanh. Bạn cũng thấy được chỗ nào trong ngành hàng đang bỏ trống.",
       },
     ],
     tripleCards: [
@@ -102,7 +102,7 @@ export const komu = section({
       {
         tag: "AI và ML",
         said: "“Chúng tôi cần dữ liệu huấn luyện mà bộ phận pháp lý chấp thuận”",
-        ans: "Tập dữ liệu sạch, có cấu trúc, lấy từ nguồn công khai, kèm nguồn gốc và thẩm quyền pháp lý được ghi nhận cho từng nguồn. Mỗi dự án đi kèm một ý kiến pháp lý bằng văn bản.",
+        ans: "Tập dữ liệu sạch, có cấu trúc, lấy từ nguồn công khai, kèm nguồn gốc và thẩm quyền pháp lý được ghi nhận cho từng nguồn. Quan điểm pháp lý bằng văn bản có sẵn cho từng dự án.",
       },
     ],
   },

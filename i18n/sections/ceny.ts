@@ -79,7 +79,7 @@ export const ceny = section({
         "Any combination of file, API, database and cloud",
         "Every batch validated before it reaches you",
         "Scraper repairs when sources change — included",
-        "Named contact, response times fixed in the contract",
+        "A named contact, with response times fixed in the contract",
       ],
       price: [
         "Monthly — sources × volume × frequency",
@@ -107,7 +107,7 @@ export const ceny = section({
     thin: "và một con số cố định trước khi bạn đồng ý bất cứ điều gì.",
     lede: "Chi phí phụ thuộc vào ba yếu tố: số lượng nguồn, tỷ lệ trang cần trình duyệt đầy đủ để hiển thị và tần suất bạn cần dữ liệu. Chúng tôi đưa ra một con số duy nhất sau khi đã tìm hiểu kỹ yêu cầu của bạn: không tính theo giờ và không phụ thu khi một nguồn bị lỗi.",
     pilot: {
-      name: "Dự án thử nghiệm",
+      name: "Thử nghiệm",
       who: "Kiểm tra dữ liệu trước",
       items: [
         "Một nguồn, một bộ dữ liệu, SKU hoặc phân khúc thực tế của bạn",

@@ -51,7 +51,7 @@ export const faq = section({
       },
       {
         q: "What about personal data and GDPR?",
-        a: "Most of what we deliver — prices, listings, stock, catalogue structure — contains no personal data at all. If a project touches company information or contacts from open registries, the legal review covers the legal basis, retention periods and your obligations as the data controller. We will tell you plainly if a request cannot be fulfilled as it is worded.",
+        a: "Most of what we deliver — prices, listings, stock, catalog structure — contains no personal data at all. If a project touches company information or contacts from open registries, the legal review covers the legal basis, retention periods and your obligations as the data controller. We will tell you plainly if a request cannot be fulfilled as it is worded.",
       },
       {
         q: "How fast can we start, and how often will the data arrive?",
@@ -75,7 +75,7 @@ export const faq = section({
       },
       {
         q: "How do you avoid overloading the sites you collect from?",
-        a: "The infrastructure is designed to behave predictably: a reasonable request rate, requests spread out over time, and retries after a failure instead of hammering. We do not pose as an authorised user and we do not create load that would stop a site from serving its own visitors. This is a design constraint, not a courtesy.",
+        a: "The infrastructure is designed to behave predictably: a reasonable request rate, requests spread out over time, and retries after a failure instead of hammering. We do not pose as an authorized user and we do not create load that would stop a site from serving its own visitors. This is a design constraint, not a courtesy.",
       },
     ],
   },
@@ -86,7 +86,7 @@ export const faq = section({
     items: [
       {
         q: "Việc này có hợp pháp không?",
-        a: "Thu thập dữ liệu mà một website công bố cho mọi khách truy cập không cần đăng nhập là hợp pháp tại các khu vực pháp lý nơi chúng tôi hoạt động. Tuy nhiên, chúng tôi không dựa vào câu trả lời chung đó: mỗi dự án đều được một văn phòng luật chuyên về pháp lý không gian mạng rà soát, theo chế độ pháp lý của quốc gia chứa nguồn, của quốc gia đặt công ty bạn và theo cách bạn dự định sử dụng kết quả. Nếu ý kiến là không khả thi, chúng tôi nói thẳng và đề xuất một nguồn khác.",
+        a: "Thu thập dữ liệu mà một website công bố cho mọi khách truy cập không cần đăng nhập là hợp pháp tại các thẩm quyền pháp lý nơi chúng tôi hoạt động. Tuy nhiên, chúng tôi không dựa vào câu trả lời chung đó: mỗi dự án đều được một văn phòng luật chuyên về không gian mạng rà soát, theo chế độ pháp lý của quốc gia chứa nguồn, của quốc gia đặt công ty bạn và theo cách bạn dự định sử dụng kết quả. Nếu ý kiến pháp lý là không thuận lợi, chúng tôi nói thẳng và đề xuất một nguồn khác.",
       },
       {
         q: "Còn dữ liệu cá nhân và GDPR thì sao?",
@@ -114,7 +114,7 @@ export const faq = section({
       },
       {
         q: "Các bạn tránh làm quá tải những website mình thu thập như thế nào?",
-        a: "Hạ tầng được thiết kế để hoạt động có thể dự đoán được: tần suất truy cập hợp lý, các yêu cầu được phân bổ theo thời gian, thử lại khi gặp lỗi thay vì dồn dập gửi liên tục. Chúng tôi không giả danh người dùng đã xác thực và không tạo tải khiến website không phục vụ được chính khách truy cập của mình. Đây là một giới hạn trong thiết kế, không phải sự nể nang.",
+        a: "Hạ tầng được thiết kế để hoạt động có thể dự đoán được: tần suất truy cập hợp lý, các yêu cầu được phân bổ theo thời gian, thử lại khi gặp lỗi thay vì dồn dập gửi liên tục. Chúng tôi không giả danh người dùng được ủy quyền và không gây tải cho website đến mức khiến website không phục vụ được chính khách truy cập của mình. Đây là một giới hạn trong thiết kế, không phải sự nể nang.",
       },
     ],
   },

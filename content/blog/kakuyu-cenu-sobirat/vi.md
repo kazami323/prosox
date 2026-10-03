@@ -108,6 +108,6 @@ Giá tính theo kilogram, lít hoặc theo từng chiếc trong bộ sản phẩ
 
 ## Ví dụ
 
-Một thương hiệu kiểm tra xem các người bán có tuân thủ giá đề xuất hay không. Trên thẻ sản phẩm, giá thấp hơn giá bán lẻ đề xuất 13%. Nếu chỉ thu thập giá cuối cùng, điều này trông như một vi phạm. Nếu bên cạnh có giá cơ bản và ghi chú rằng mức giảm đến từ coupon của nền tảng, bức tranh sẽ khác: người bán giữ đúng giá bán lẻ đề xuất, còn sàn thương mại điện tử là bên chi trả khoản giảm giá.
+Một thương hiệu kiểm tra xem các người bán có tuân thủ giá bán lẻ đề xuất hay không. Trên thẻ sản phẩm, giá thấp hơn giá bán lẻ đề xuất 13%. Nếu chỉ thu thập giá cuối cùng, điều này trông như một vi phạm. Nếu bên cạnh có giá cơ bản và ghi chú rằng mức giảm đến từ coupon của nền tảng, bức tranh sẽ khác: người bán giữ đúng giá bán lẻ đề xuất, còn nền tảng là bên chi trả khoản giảm giá.
 
 Vì vậy, mỗi loại giá khi thu thập được lưu ở một trường riêng, cùng với người bán, thời điểm ghi nhận và tình trạng hàng có sẵn. Khi đó cùng một bộ dữ liệu trả lời được nhiều câu hỏi khác nhau, và báo cáo cho một tác vụ mới được xây dựng mà không cần thu thập lại.

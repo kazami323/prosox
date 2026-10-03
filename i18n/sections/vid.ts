@@ -87,7 +87,7 @@ export const vid = section({
       srcA: "Sàn A",
       srcB: "Sàn B",
       srcC: "Nhà bán lẻ C",
-      srcD: "Danh mục D",
+      srcD: "Cửa hàng D",
       cap: "Tệp được gửi đến email hoặc thư mục dùng chung lúc 06:00. Mở ra là dùng được ngay: bảng tổng hợp, bộ lọc, công thức của riêng bạn.",
     },
     alert: {
@@ -100,7 +100,7 @@ export const vid = section({
     },
     dash: {
       top: "Bảng điều khiển — công cụ BI của bạn hoặc micro-SaaS của chúng tôi",
-      kpiBelow: "Thấp hơn giá của bạn",
+      kpiBelow: "Thấp hơn giá của chúng tôi",
       kpiIndex: "Chỉ số so với ngành hàng",
       kpiSku: "SKU đang theo dõi",
       kpiOut: "Hết hàng",

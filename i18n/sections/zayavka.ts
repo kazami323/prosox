@@ -90,7 +90,7 @@ export const zayavka = section({
     officeLabel: "Office",
     officeCity: "Da Nang, Vietnam",
     companyRowLabel: "Company",
-    companyRowSize: "PROSOX, 11–50 employees",
+    companyRowSize: "PROSOX, 11–50 specialists",
     companyRowIndustry: "Technology, information and internet",
     footnote:
       "We work across time zones. If your legal or procurement team needs documents before work begins, let us know and we will send the company details, an NDA template and a sample legal opinion in advance.",

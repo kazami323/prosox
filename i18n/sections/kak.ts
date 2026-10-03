@@ -93,7 +93,7 @@ export const kak = section({
         title: "Legal review and a fixed quote",
         by: "PROSOX",
         text: "Our lawyers review the jurisdiction of the sources and of your company. In parallel we work out the technical cost: static pages are cheap, pages rendered with JavaScript are not. You get one figure, not a range.",
-        out: ["verdict: feasible / not feasible", "fixed quote", "start date"],
+        out: ["opinion: permitted / not permitted", "fixed quote", "start date"],
       },
       {
         title: "A sample built on your sources",
@@ -154,7 +154,7 @@ export const kak = section({
     },
   },
   vi: {
-    kicker: "Cách chúng tôi làm việc",
+    kicker: "Cách hoạt động",
     h2: "Một email từ phía bạn.",
     thin: "Toàn bộ phần kỹ thuật là việc của chúng tôi.",
     lede: "Trong sáu bước, chỉ ba bước thuộc về bạn, và không bước nào mất quá nửa giờ. Mọi việc còn lại — đánh giá khả thi, rà soát pháp lý, trình thu thập, làm sạch dữ liệu, giám sát, sửa lỗi — đều do chúng tôi đảm nhận.",
@@ -169,7 +169,7 @@ export const kak = section({
         title: "Rà soát pháp lý và báo giá cố định",
         by: "PROSOX",
         text: "Luật sư của chúng tôi kiểm tra thẩm quyền pháp lý của các nguồn và của công ty bạn. Song song, chúng tôi tính chi phí kỹ thuật: trang tĩnh rẻ, còn trang hiển thị bằng JavaScript thì không. Bạn nhận một con số duy nhất, không phải một khoảng giá.",
-        out: ["kết luận: làm được / không làm được", "báo giá cố định", "ngày bắt đầu"],
+        out: ["ý kiến pháp lý: được phép / không được phép", "báo giá cố định", "ngày bắt đầu"],
       },
       {
         title: "Bản mẫu được dựng trên chính nguồn của bạn",
@@ -217,7 +217,7 @@ export const kak = section({
           us: "Việc của chúng tôi, nằm trong cùng mức phí",
         },
         {
-          label: "Lập trường pháp lý về việc thu thập",
+          label: "Đánh giá pháp lý về việc thu thập",
           own: "Luật sư của bạn, từng nguồn một, làm lại từ đầu",
           us: "Rà soát trước khi bắt đầu, có văn bản nếu bạn yêu cầu",
         },

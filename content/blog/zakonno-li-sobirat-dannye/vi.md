@@ -29,11 +29,11 @@ Phần lớn án lệ về chủ đề này nằm ở Hoa Kỳ, vì vậy các q
 
 **Dữ liệu cá nhân.** Họ tên, số điện thoại, ảnh của một người vẫn là dữ liệu cá nhân, ngay cả khi nằm trên một trang công khai. Các luật riêng được áp dụng đối với loại dữ liệu này. Ở Liên minh châu Âu là GDPR. Tại Việt Nam, từ ngày 1/1/2026 có hiệu lực Luật Bảo vệ dữ liệu cá nhân số 91/2025/QH15, thay thế Nghị định số 13/2023/NĐ-CP trước đây. Luật này, cụ thể, cấm mua bán dữ liệu cá nhân, trừ những trường hợp được luật quy định rõ. Vì vậy, câu hỏi đầu tiên với bất kỳ dự án nào là: nhiệm vụ có cần đến dữ liệu cá nhân hay không. Thường là không.
 
-**Quyền tác giả.** Các dữ kiện, ví dụ giá, tình trạng còn hàng hoặc tên công ty, như một quy tắc, không được bảo hộ bởi quyền tác giả. Văn bản mô tả, bài viết và ảnh thì được bảo hộ. Bạn có thể thu thập giá và so sánh với các mức giá khác. Nhưng không được sao chép mô tả và ảnh của người khác về website của mình.
+**Quyền tác giả.** Các dữ kiện, ví dụ giá, tình trạng còn hàng hoặc tên công ty, thông thường, không được bảo hộ bởi quyền tác giả. Văn bản mô tả, bài viết và ảnh thì được bảo hộ. Bạn có thể thu thập giá và so sánh với các mức giá khác. Nhưng không được sao chép mô tả và ảnh của người khác về website của mình.
 
 **Cơ sở dữ liệu.** Tại EU, các cơ sở dữ liệu mà việc tạo lập đã đòi hỏi đầu tư đáng kể được bảo hộ riêng. Việc trích xuất một phần đáng kể của cơ sở dữ liệu như vậy có thể xâm phạm quyền của chủ sở hữu, ngay cả khi từng bản ghi riêng lẻ là công khai.
 
-**Tải lên website.** Việc thu thập không được gây cản trở hoạt động của nguồn. Tần suất yêu cầu hợp lý, phân bổ chúng theo thời gian và không giả danh người dùng được ủy quyền: đây không chỉ là vấn đề phép lịch sự mà còn là vấn đề rủi ro pháp lý.
+**Tải đối với website.** Việc thu thập không được gây cản trở hoạt động của nguồn. Tần suất yêu cầu hợp lý, phân bổ chúng theo thời gian và không giả danh người dùng được ủy quyền: đây không chỉ là vấn đề phép lịch sự mà còn là vấn đề rủi ro pháp lý.
 
 ## Những gì chúng tôi kiểm tra trước khi bắt đầu dự án
 

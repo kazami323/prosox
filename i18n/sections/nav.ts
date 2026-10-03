@@ -50,8 +50,8 @@ export const nav = section({
     links: [
       { label: "Dành cho ai", mobileLabel: "Dành cho ai" },
       { label: "Cách hoạt động", mobileLabel: "Cách hoạt động" },
-      { label: "Trông như thế nào", mobileLabel: "Trông như thế nào" },
-      { label: "Bạn nhận được gì", mobileLabel: "Bạn nhận được gì" },
+      { label: "Trông ra sao", mobileLabel: "Trông như thế nào" },
+      { label: "Bạn nhận gì", mobileLabel: "Bạn nhận được gì" },
       { label: "Tính pháp lý", mobileLabel: "Tính pháp lý" },
       { label: "Cobi AI", mobileLabel: "Cobi AI" },
       { label: "Giá", mobileLabel: "Giá và cách bắt đầu" },

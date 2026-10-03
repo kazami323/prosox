@@ -43,7 +43,7 @@ export const zakon = section({
     never: [
       "We do not log in to accounts, yours or anyone else's, to get at what is behind them",
       "We do not collect from paid, private or any other closed sections of a site",
-      "We do not bypass access protection or present our scrapers as an authorised user",
+      "We do not bypass access protection or present our scrapers as an authorized user",
       "We do not take personal data beyond what the applicable jurisdictions permit for your stated purpose",
       "We do not put load on a source that keeps it from serving its own visitors",
     ],
@@ -56,7 +56,7 @@ export const zakon = section({
     lede: "Thu thập dữ liệu công khai là hợp pháp, và bản thân câu trả lời đó có giá trị không nhiều. Điều luật sư của bạn quan tâm là việc khác: ai đã kiểm tra, theo thẩm quyền pháp lý của nước nào, và có thể xem điều đó bằng văn bản hay không. Cả ba điểm đều nằm trong dịch vụ.",
     steps: [
       { title: "Yêu cầu được ghi nhận", text: "Chúng tôi lập tài liệu về nguồn và mục đích sử dụng trước khi bắt đầu xây dựng bất cứ thứ gì." },
-      { title: "Đã kiểm tra thẩm quyền pháp lý", text: "Chế độ pháp lý của quốc gia đặt nguồn và quốc gia của công ty bạn. Do một văn phòng luật về không gian mạng kiểm tra, đơn vị đồng hành cùng mọi dự án của chúng tôi." },
+      { title: "Đã kiểm tra thẩm quyền", text: "Chế độ pháp lý của quốc gia đặt nguồn và quốc gia của công ty bạn. Do một văn phòng luật chuyên về không gian mạng kiểm tra, đơn vị đồng hành cùng mọi dự án của chúng tôi." },
       { title: "Đã kiểm tra tuân thủ", text: "Dữ liệu cá nhân, điều khoản của các nền tảng, bản quyền và quyền đối với cơ sở dữ liệu — gắn với việc bạn dự định làm với kết quả." },
       { title: "Cho phép thu thập", text: "Dự án bắt đầu triển khai, và quan điểm pháp lý bằng văn bản về dự án có sẵn cho bạn khi yêu cầu — trước khi ký hợp đồng, không phải sau." },
     ],
@@ -67,9 +67,9 @@ export const zakon = section({
     never: [
       "Không đăng nhập vào tài khoản, của bạn hay của người khác, để lấy những gì nằm phía sau",
       "Không thu thập từ các mục trả phí, riêng tư và bất kỳ mục đóng nào của trang web",
-      "Không vượt qua cơ chế bảo vệ truy cập và không để trình thu thập của mình đóng vai người dùng đã được cấp quyền",
+      "Không vượt qua cơ chế bảo vệ truy cập và không để trình thu thập của mình đóng vai người dùng được ủy quyền",
       "Không lấy dữ liệu cá nhân vượt quá mức mà các thẩm quyền pháp lý áp dụng cho phép đối với mục đích bạn đã nêu",
-      "Không tạo tải lên nguồn đến mức cản trở nguồn phục vụ chính khách truy cập của họ",
+      "Không gây tải cho nguồn đến mức cản trở nguồn phục vụ chính khách truy cập của họ",
     ],
     neverOutro: "Nếu một nguồn chỉ thu thập được bằng cách vượt qua một trong những ranh giới này, chúng tôi sẽ nói rõ là không thể làm và đề xuất nguồn thay thế. Cuộc trao đổi đó diễn ra trước khi bắt đầu công việc, không phải sau khi bạn đã thanh toán.",
   },
